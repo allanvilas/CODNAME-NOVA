@@ -1,0 +1,719 @@
+[gd_scene load_steps=74 format=2]
+
+[ext_resource path="res://tileset/backgound_updatefull/masmora_08.png" type="Texture" id=1]
+[ext_resource path="res://tileset/background_update/masmora_05.png" type="Texture" id=2]
+[ext_resource path="res://tileset/background_update/masmora_10.png" type="Texture" id=3]
+[ext_resource path="res://tileset/background_update/masmora_21.png" type="Texture" id=4]
+[ext_resource path="res://tileset/background_update/masmora_22.png" type="Texture" id=5]
+[ext_resource path="res://tileset/update_masm/imagens/base-masmora_135.png" type="Texture" id=6]
+[ext_resource path="res://assets/cenario/masmora_01/masmora_07.png" type="Texture" id=7]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_13.png" type="Texture" id=8]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_18.png" type="Texture" id=9]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_19.png" type="Texture" id=10]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_24.png" type="Texture" id=11]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_20.png" type="Texture" id=12]
+[ext_resource path="res://tileset/background_update/masmora_09.png" type="Texture" id=13]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_14.png" type="Texture" id=14]
+[ext_resource path="res://tileset/update_masm/imagens/base-masmora_124.png" type="Texture" id=15]
+[ext_resource path="res://tileset/update_masm/imagens/base-masmora_126.png" type="Texture" id=16]
+[ext_resource path="res://tileset/update_masm/imagens/base-masmora_128.png" type="Texture" id=17]
+[ext_resource path="res://assets/cenario/masmora_01/Sprite-0005_12.png" type="Texture" id=18]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_30.png" type="Texture" id=19]
+[ext_resource path="res://assets/cenario/masmora_01/Sprite-0005_14.png" type="Texture" id=20]
+[ext_resource path="res://tileset/agua/auga_06.png" type="Texture" id=21]
+[ext_resource path="res://tileset/agua/auga_07.png" type="Texture" id=22]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_137.png" type="Texture" id=23]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_181.png" type="Texture" id=24]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_229.png" type="Texture" id=25]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_193.png" type="Texture" id=26]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_205.png" type="Texture" id=27]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_217.png" type="Texture" id=28]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_195.png" type="Texture" id=29]
+[ext_resource path="res://tileset/agua/novo-prisma_01.png" type="Texture" id=30]
+[ext_resource path="res://tileset/agua/novo-prisma_02.png" type="Texture" id=31]
+[ext_resource path="res://tileset/update_masm/imagens/base-masmora_53.png" type="Texture" id=32]
+[ext_resource path="res://tileset/update_masm/imagens/base-masmora_51.png" type="Texture" id=33]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_136.png" type="Texture" id=34]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_138.png" type="Texture" id=35]
+[ext_resource path="res://tileset/agua/auga_08.png" type="Texture" id=36]
+[ext_resource path="res://tileset/agua/auga_09.png" type="Texture" id=37]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_139.png" type="Texture" id=38]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_194.png" type="Texture" id=39]
+[ext_resource path="res://tileset/agua/auga_13.png" type="Texture" id=40]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_153.png" type="Texture" id=41]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_161.png" type="Texture" id=42]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_162.png" type="Texture" id=43]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_148.png" type="Texture" id=44]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_149.png" type="Texture" id=45]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_150.png" type="Texture" id=46]
+[ext_resource path="res://tileset/agua/auga_14.png" type="Texture" id=47]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_151.png" type="Texture" id=48]
+[ext_resource path="res://tileset/agua/auga_15.png" type="Texture" id=49]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_152.png" type="Texture" id=50]
+[ext_resource path="res://tileset/update_masm/imagens/coins_33.png" type="Texture" id=51]
+[ext_resource path="res://tileset/update_masm/imagens/coins_34.png" type="Texture" id=52]
+[ext_resource path="res://tileset/update_masm/imagens/coins_35.png" type="Texture" id=53]
+[ext_resource path="res://tileset/update_masm/imagens/coins_36.png" type="Texture" id=54]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_142.png" type="Texture" id=55]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_143.png" type="Texture" id=56]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_155.png" type="Texture" id=57]
+[ext_resource path="res://tileset/update_masm/imagens/agua-masmora_154.png" type="Texture" id=58]
+[ext_resource path="res://tileset/agua/auga_10.png" type="Texture" id=59]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="OccluderPolygon2D" id=15]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -16.0123, -16.016, 16.2232, -15.8756, 16.1298, -6.80813, -16.0123, -6.80813 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( 16.0346, -7.14237, 15.9215, -16.0791, -15.9217, -16.055, -15.9282, -7.1925 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.24416, 15.5671 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( 16.2479, -16.0901, 15.9656, 15.9629, 5.06066, 15.6495, 5.00615, -15.9957 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.25526, 15.9151 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -15.7992, -16.1363, -5.12238, -16.0316, -5.12937, 16.0882, -15.909, 15.9629 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.12818, 15.5561 )
+
+[sub_resource type="OccluderPolygon2D" id=12]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( 5.01958, -16.6492, 16.0457, -16.445, 15.704, 16.4755, 5.23946, 16.4755 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.25526, 15.672 )
+
+[sub_resource type="OccluderPolygon2D" id=13]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -15.9958, -16.1552, -5.01308, -16.1552, -5.02699, 15.9386, -15.9317, 15.9725 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="CapsuleShape2D" id=7]
+
+custom_solver_bias = 0.0
+radius = 3.13651
+height = 22.2055
+
+[sub_resource type="OccluderPolygon2D" id=14]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( 8.98005, 15.9511, 15.9312, 15.9511, 15.9587, -16.0077, 8.92488, -16.0629 )
+
+[node name="masmora_01" type="Node2D"]
+
+[node name="parede" type="Sprite" parent="." index="0"]
+
+position = Vector2( 16, 16 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parede" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="parede" index="1"]
+
+occluder = SubResource( 15 )
+light_mask = 1
+
+[node name="parede_buraco" type="Sprite" parent="." index="1"]
+
+position = Vector2( 112, 48 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parede_buraco" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede_buraco/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="portal_up" type="Sprite" parent="." index="2"]
+
+light_mask = 2
+position = Vector2( 144, 16 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="sombra" type="Sprite" parent="." index="3"]
+
+position = Vector2( 144, 48 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="sombra2" type="Sprite" parent="." index="4"]
+
+position = Vector2( 144, 80 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="outmap2" type="Sprite" parent="." index="5"]
+
+position = Vector2( 176, 48 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="outmap2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outmap2/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="parede_buraco5" type="Sprite" parent="." index="6"]
+
+position = Vector2( 176, 16 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parede_buraco5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede_buraco5/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="parede_buraco5/StaticBody2D" index="1"]
+
+occluder = SubResource( 9 )
+light_mask = 1
+
+[node name="parede2" type="Sprite" parent="." index="7"]
+
+position = Vector2( 48, 16 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parede2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede2/StaticBody2D" index="0"]
+
+position = Vector2( 10.5544, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="parede2" index="1"]
+
+occluder = SubResource( 10 )
+light_mask = 1
+
+[node name="parede3" type="Sprite" parent="." index="8"]
+
+position = Vector2( 80, 16 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parede3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede3/StaticBody2D" index="0"]
+
+position = Vector2( -10.3224, 0 )
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="parede3" index="1"]
+
+occluder = SubResource( 11 )
+light_mask = 1
+
+[node name="parede4" type="Sprite" parent="." index="9"]
+
+position = Vector2( 48, 48 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parede4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede4/StaticBody2D" index="0"]
+
+position = Vector2( 10.4384, 0 )
+shape = SubResource( 4 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="parede4" index="1"]
+
+occluder = SubResource( 12 )
+light_mask = 1
+
+[node name="parede5" type="Sprite" parent="." index="10"]
+
+position = Vector2( 80, 48 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parede5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede5/StaticBody2D" index="0"]
+
+position = Vector2( -10.5544, 0 )
+shape = SubResource( 5 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="parede5" index="1"]
+
+occluder = SubResource( 13 )
+light_mask = 1
+
+[node name="outmap" type="Sprite" parent="." index="11"]
+
+position = Vector2( 16, 48 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="outmap" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outmap/StaticBody2D" index="0"]
+
+shape = SubResource( 6 )
+
+[node name="portal_base" type="Sprite" parent="." index="12"]
+
+position = Vector2( 112, 16 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="portal_base" index="0"]
+
+position = Vector2( 0, -0.28479 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal_base/StaticBody2D" index="0"]
+
+position = Vector2( -12.5308, -0.711979 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="portal_base/StaticBody2D" index="1"]
+
+position = Vector2( 12.5308, -0.711979 )
+shape = SubResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="portal_base" index="1"]
+
+occluder = SubResource( 14 )
+light_mask = 1
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="portal_base" index="2"]
+
+position = Vector2( -24.9193, 0 )
+occluder = SubResource( 14 )
+light_mask = 1
+
+[node name="chão" type="Sprite" parent="." index="13"]
+
+position = Vector2( 16, 80 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="chão5" type="Sprite" parent="." index="14"]
+
+position = Vector2( 208, 48 )
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="chão6" type="Sprite" parent="." index="15"]
+
+position = Vector2( 240, 48 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="chão7" type="Sprite" parent="." index="16"]
+
+position = Vector2( 272, 48 )
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="chão4" type="Sprite" parent="." index="17"]
+
+position = Vector2( 16, 112 )
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="chão2" type="Sprite" parent="." index="18"]
+
+position = Vector2( 48, 80 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="chão3" type="Sprite" parent="." index="19"]
+
+position = Vector2( 80, 80 )
+texture = ExtResource( 20 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua" type="Sprite" parent="." index="20"]
+
+position = Vector2( 80, 112 )
+texture = ExtResource( 21 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua2" type="Sprite" parent="." index="21"]
+
+position = Vector2( 112, 112 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua6" type="Sprite" parent="." index="22"]
+
+position = Vector2( 112, 144 )
+texture = ExtResource( 23 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua10" type="Sprite" parent="." index="23"]
+
+position = Vector2( 48, 144 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua12" type="Sprite" parent="." index="24"]
+
+position = Vector2( 48, 176 )
+texture = ExtResource( 25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua25" type="Sprite" parent="." index="25"]
+
+position = Vector2( 48, 208 )
+texture = ExtResource( 26 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua26" type="Sprite" parent="." index="26"]
+
+position = Vector2( 48, 240 )
+texture = ExtResource( 27 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua27" type="Sprite" parent="." index="27"]
+
+position = Vector2( 48, 272 )
+texture = ExtResource( 28 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua28" type="Sprite" parent="." index="28"]
+
+position = Vector2( 48, 304 )
+texture = ExtResource( 25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua29" type="Sprite" parent="." index="29"]
+
+position = Vector2( 112, 304 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua30" type="Sprite" parent="." index="30"]
+
+position = Vector2( 144, 304 )
+texture = ExtResource( 29 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua38" type="Sprite" parent="." index="31"]
+
+position = Vector2( 176, 304 )
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua39" type="Sprite" parent="." index="32"]
+
+position = Vector2( 208, 304 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua31" type="Sprite" parent="." index="33"]
+
+position = Vector2( 144, 272 )
+texture = ExtResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua32" type="Sprite" parent="." index="34"]
+
+position = Vector2( 208, 272 )
+texture = ExtResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua33" type="Sprite" parent="." index="35"]
+
+position = Vector2( 176, 272 )
+texture = ExtResource( 33 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua11" type="Sprite" parent="." index="36"]
+
+position = Vector2( 80, 144 )
+texture = ExtResource( 34 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua3" type="Sprite" parent="." index="37"]
+
+position = Vector2( 144, 144 )
+texture = ExtResource( 35 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua7" type="Sprite" parent="." index="38"]
+
+position = Vector2( 144, 112 )
+texture = ExtResource( 36 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua4" type="Sprite" parent="." index="39"]
+
+position = Vector2( 176, 112 )
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua8" type="Sprite" parent="." index="40"]
+
+position = Vector2( 176, 144 )
+texture = ExtResource( 38 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua9" type="Sprite" parent="." index="41"]
+
+position = Vector2( 208, 144 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua17" type="Sprite" parent="." index="42"]
+
+position = Vector2( 208, 176 )
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua37" type="Sprite" parent="." index="43"]
+
+position = Vector2( 240, 240 )
+texture = ExtResource( 41 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua18" type="Sprite" parent="." index="44"]
+
+position = Vector2( 176, 176 )
+texture = ExtResource( 42 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua19" type="Sprite" parent="." index="45"]
+
+position = Vector2( 144, 176 )
+texture = ExtResource( 43 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua20" type="Sprite" parent="." index="46"]
+
+position = Vector2( 112, 176 )
+texture = ExtResource( 44 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua21" type="Sprite" parent="." index="47"]
+
+position = Vector2( 80, 176 )
+texture = ExtResource( 45 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua22" type="Sprite" parent="." index="48"]
+
+position = Vector2( 80, 208 )
+texture = ExtResource( 46 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua34" type="Sprite" parent="." index="49"]
+
+position = Vector2( 80, 240 )
+texture = ExtResource( 47 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua23" type="Sprite" parent="." index="50"]
+
+position = Vector2( 112, 208 )
+texture = ExtResource( 48 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua35" type="Sprite" parent="." index="51"]
+
+position = Vector2( 112, 240 )
+texture = ExtResource( 49 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua24" type="Sprite" parent="." index="52"]
+
+position = Vector2( 144, 208 )
+texture = ExtResource( 50 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua36" type="Sprite" parent="." index="53"]
+
+position = Vector2( 144, 240 )
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="coin" type="Sprite" parent="." index="54"]
+
+position = Vector2( 176, 208 )
+texture = ExtResource( 51 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="coin2" type="Sprite" parent="." index="55"]
+
+position = Vector2( 208, 208 )
+texture = ExtResource( 52 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="coin3" type="Sprite" parent="." index="56"]
+
+position = Vector2( 240, 208 )
+texture = ExtResource( 53 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="coin4" type="Sprite" parent="." index="57"]
+
+position = Vector2( 272, 208 )
+texture = ExtResource( 54 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua13" type="Sprite" parent="." index="58"]
+
+position = Vector2( 240, 144 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua15" type="Sprite" parent="." index="59"]
+
+position = Vector2( 272, 144 )
+texture = ExtResource( 56 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua16" type="Sprite" parent="." index="60"]
+
+position = Vector2( 272, 176 )
+texture = ExtResource( 57 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua14" type="Sprite" parent="." index="61"]
+
+position = Vector2( 240, 176 )
+texture = ExtResource( 58 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="agua5" type="Sprite" parent="." index="62"]
+
+position = Vector2( 208, 112 )
+texture = ExtResource( 59 )
+_sections_unfolded = [ "Transform" ]
+
+

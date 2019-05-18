@@ -1,0 +1,999 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://UI/ui.gd" type="Script" id=1]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_40.png" type="Texture" id=2]
+[ext_resource path="res://UI/imagens/skill_bar_03.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Alkhemikal.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://UI/imagens/skill_bar_05.png" type="Texture" id=5]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_30.png" type="Texture" id=6]
+[ext_resource path="res://UI/life_bar_empty.png" type="Texture" id=7]
+[ext_resource path="res://UI/life_bar_full.png" type="Texture" id=8]
+[ext_resource path="res://UI/mana_bar_empty-export.png" type="Texture" id=9]
+[ext_resource path="res://UI/mana_bar_full-export.png" type="Texture" id=10]
+[ext_resource path="res://UI/ui.png" type="Texture" id=11]
+[ext_resource path="res://UI/xp.png" type="Texture" id=12]
+[ext_resource path="res://UI/status.gd" type="Script" id=13]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_28.png" type="Texture" id=14]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_50.png" type="Texture" id=15]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_53.png" type="Texture" id=16]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_51.png" type="Texture" id=17]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_54.png" type="Texture" id=18]
+[ext_resource path="res://assets/speels/fire/fire1.png" type="Texture" id=19]
+[ext_resource path="res://assets/speels/fire/fire3.png" type="Texture" id=20]
+[ext_resource path="res://assets/speels/fire/fire2.png" type="Texture" id=21]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_22.png" type="Texture" id=22]
+[ext_resource path="res://UI/menu_novo2.0/elements.png" type="Texture" id=23]
+[ext_resource path="res://fonts/base_font.tres" type="DynamicFont" id=24]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_46.png" type="Texture" id=25]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_49.png" type="Texture" id=26]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_21.png" type="Texture" id=27]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_38.png" type="Texture" id=28]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_08.png" type="Texture" id=29]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_09.png" type="Texture" id=30]
+[ext_resource path="res://tileset/menu_status/menu_novo_06.png" type="Texture" id=31]
+[ext_resource path="res://tileset/menu_status/menu_novo_07.png" type="Texture" id=32]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_20.png" type="Texture" id=33]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_15.png" type="Texture" id=34]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_16.png" type="Texture" id=35]
+[ext_resource path="res://UI/menu_novo2.0/omega.png" type="Texture" id=36]
+[ext_resource path="res://UI/frost14.png" type="Texture" id=37]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_35.png" type="Texture" id=38]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_36.png" type="Texture" id=39]
+[ext_resource path="res://UI/test.gd" type="Script" id=40]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_31.png" type="Texture" id=41]
+
+[sub_resource type="DynamicFont" id=1]
+use_mipmaps = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[sub_resource type="InputEventAction" id=3]
+pressed = true
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+scale = Vector2( 4, 4 )
+transform = Transform2D( 4, 0, 0, 4, 0, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 40.3268, 463.591, 212.153, 175.665, 245.0 ],
+"_edit_vertical_guides_": [ 648.499, 944.385, 863.448, 936.424, 670.0 ]
+}
+
+[node name="skills" type="NinePatchRect" parent="."]
+editor/display_folded = true
+margin_top = 127.0
+margin_right = 42.0
+margin_bottom = 149.0
+texture = ExtResource( 2 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="frost" type="Sprite" parent="skills"]
+position = Vector2( 11.7316, 11.3526 )
+texture = ExtResource( 3 )
+
+[node name="cost" type="Label" parent="skills/frost"]
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 17.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "25"
+
+[node name="fire" type="Sprite" parent="skills"]
+position = Vector2( 29.4197, 11.3863 )
+texture = ExtResource( 5 )
+
+[node name="cost" type="Label" parent="skills/fire"]
+margin_left = -2.0
+margin_top = 1.0
+margin_right = 13.0
+margin_bottom = 17.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "25"
+
+[node name="needs" type="NinePatchRect" parent="."]
+editor/display_folded = true
+margin_right = 18.0
+margin_bottom = 57.0
+texture = ExtResource( 6 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="vida" type="TextureProgress" parent="needs"]
+margin_left = 4.0
+margin_top = 52.0
+margin_right = 52.0
+margin_bottom = 62.0
+rect_rotation = 270.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 1
+stretch_margin_right = 4
+stretch_margin_bottom = 1
+
+[node name="mana" type="NinePatchRect" parent="needs"]
+margin_left = 13.0
+margin_right = 53.0
+margin_bottom = 17.0
+texture = ExtResource( 6 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="mana" type="TextureProgress" parent="needs/mana"]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 44.0
+margin_bottom = 13.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 10 )
+
+[node name="qt_mana" type="Label" parent="needs/mana/mana"]
+margin_left = 5.0
+margin_top = -2.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 2 )
+text = "mana"
+
+[node name="ui" type="Sprite" parent="."]
+visible = false
+position = Vector2( 24, 24 )
+texture = ExtResource( 11 )
+
+[node name="xp" type="TextureProgress" parent="."]
+visible = false
+margin_top = -2.0
+margin_right = 40.0
+margin_bottom = 38.0
+max_value = 100.003
+value = 50.0
+texture_progress = ExtResource( 12 )
+fill_mode = 4
+radial_initial_angle = 125.0
+
+[node name="status" type="Control" parent="."]
+editor/display_folded = true
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="switch" type="NinePatchRect" parent="status"]
+margin_left = 65.0
+margin_top = 14.0
+margin_right = 105.0
+margin_bottom = 54.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="base" type="NinePatchRect" parent="status/switch"]
+margin_left = 4.0
+margin_top = -5.0
+margin_right = 29.0
+margin_bottom = 19.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 14 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="base" type="TextureButton" parent="status/switch/base"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 22.0
+margin_bottom = 20.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
+
+[node name="status" type="NinePatchRect" parent="status/switch"]
+margin_left = 4.0
+margin_top = 13.0
+margin_right = 29.0
+margin_bottom = 37.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 14 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="status" type="TextureButton" parent="status/switch/status"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 22.0
+margin_bottom = 20.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+
+[node name="skills" type="NinePatchRect" parent="status/switch"]
+margin_left = 4.0
+margin_top = 31.0
+margin_right = 29.0
+margin_bottom = 55.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 14 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="skills" type="TextureButton" parent="status/switch/skills"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 38.0
+margin_bottom = 36.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 21 )
+
+[node name="base" type="NinePatchRect" parent="status"]
+editor/display_folded = true
+visible = false
+margin_left = 83.0
+margin_top = 4.0
+margin_right = 179.0
+margin_bottom = 137.0
+texture = ExtResource( 2 )
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player" type="NinePatchRect" parent="status/base"]
+editor/display_folded = true
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 93.0
+margin_bottom = 44.0
+texture = ExtResource( 22 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Sprite" type="Sprite" parent="status/base/player"]
+position = Vector2( 21.0102, 21.2629 )
+scale = Vector2( 1.19372, 1.19372 )
+texture = ExtResource( 23 )
+
+[node name="PLayer" type="Label" parent="status/base/player"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 74.0
+margin_bottom = 23.0
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Player"
+
+[node name="tl" type="Label" parent="status/base/player"]
+margin_left = 56.0
+margin_top = 10.0
+margin_right = 123.0
+margin_bottom = 26.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "O Aprendiz"
+
+[node name="xp" type="Label" parent="status/base/player"]
+margin_left = 11.0
+margin_top = 22.0
+margin_right = 53.0
+margin_bottom = 38.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Xp : 0"
+
+[node name="lv" type="Label" parent="status/base/player"]
+margin_left = 63.0
+margin_top = 22.0
+margin_right = 105.0
+margin_bottom = 38.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Lv : 1"
+
+[node name="exp" type="TextureProgress" parent="status/base/player"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.0
+margin_top = 25.0
+margin_right = 35.0
+margin_bottom = 40.0
+value = 60.0
+texture_under = ExtResource( 25 )
+texture_progress = ExtResource( 26 )
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 5
+stretch_margin_right = 2
+stretch_margin_bottom = 6
+
+[node name="+++" type="NinePatchRect" parent="status/base"]
+margin_left = 75.0
+margin_top = 44.0
+margin_right = 92.0
+margin_bottom = 116.0
+texture = ExtResource( 27 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="esc2" type="NinePatchRect" parent="status/base"]
+editor/display_folded = true
+margin_left = 85.0
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 11.0
+texture = ExtResource( 28 )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="esc" type="TextureButton" parent="status/base/esc2"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 18.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.4, 0.4 )
+shortcut = SubResource( 4 )
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 30 )
+
+[node name="magica" type="NinePatchRect" parent="status/base"]
+editor/display_folded = true
+margin_left = 4.0
+margin_top = 44.0
+margin_right = 77.0
+margin_bottom = 62.0
+texture = ExtResource( 27 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+
+[node name="mag2" type="TextureButton" parent="status/base/magica"]
+margin_left = 76.0
+margin_top = 5.0
+margin_right = 92.0
+margin_bottom = 23.0
+rect_scale = Vector2( 0.5, 0.5 )
+shortcut = SubResource( 4 )
+texture_normal = ExtResource( 31 )
+texture_pressed = ExtResource( 32 )
+
+[node name="mag" type="Label" parent="status/base/magica"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.5
+margin_top = -5.0
+margin_right = 13.5
+margin_bottom = 11.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Magica"
+
+[node name="value" type="Label" parent="status/base/magica"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 17.5
+margin_top = -4.0
+margin_right = 46.5
+margin_bottom = 12.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "0"
+align = 1
+
+[node name="sab" type="NinePatchRect" parent="status/base"]
+editor/display_folded = true
+margin_left = 4.0
+margin_top = 62.0
+margin_right = 77.0
+margin_bottom = 80.0
+texture = ExtResource( 27 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+
+[node name="sabe" type="TextureButton" parent="status/base/sab"]
+margin_left = 76.0
+margin_top = 5.0
+margin_right = 92.0
+margin_bottom = 23.0
+rect_scale = Vector2( 0.5, 0.5 )
+shortcut = SubResource( 4 )
+texture_normal = ExtResource( 31 )
+texture_pressed = ExtResource( 32 )
+
+[node name="sab" type="Label" parent="status/base/sab"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.5
+margin_top = -5.0
+margin_right = 13.5
+margin_bottom = 11.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Sabedoria"
+
+[node name="value" type="Label" parent="status/base/sab"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 17.5
+margin_top = -4.0
+margin_right = 46.5
+margin_bottom = 12.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "0"
+align = 1
+
+[node name="int" type="NinePatchRect" parent="status/base"]
+editor/display_folded = true
+margin_left = 4.0
+margin_top = 80.0
+margin_right = 77.0
+margin_bottom = 98.0
+texture = ExtResource( 27 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+
+[node name="inte" type="TextureButton" parent="status/base/int"]
+margin_left = 76.0
+margin_top = 5.0
+margin_right = 92.0
+margin_bottom = 23.0
+rect_scale = Vector2( 0.5, 0.5 )
+shortcut = SubResource( 4 )
+texture_normal = ExtResource( 31 )
+texture_pressed = ExtResource( 32 )
+
+[node name="int" type="Label" parent="status/base/int"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.5
+margin_top = -5.0
+margin_right = 13.5
+margin_bottom = 11.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Inteligência"
+
+[node name="value" type="Label" parent="status/base/int"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 17.5
+margin_top = -4.0
+margin_right = 46.5
+margin_bottom = 12.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "0"
+align = 1
+
+[node name="eth" type="NinePatchRect" parent="status/base"]
+editor/display_folded = true
+margin_left = 4.0
+margin_top = 98.0
+margin_right = 77.0
+margin_bottom = 116.0
+texture = ExtResource( 27 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+
+[node name="ethri" type="TextureButton" parent="status/base/eth"]
+margin_left = 76.0
+margin_top = 5.0
+margin_right = 92.0
+margin_bottom = 23.0
+rect_scale = Vector2( 0.5, 0.5 )
+shortcut = SubResource( 4 )
+texture_normal = ExtResource( 31 )
+texture_pressed = ExtResource( 32 )
+
+[node name="eth" type="Label" parent="status/base/eth"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.5
+margin_top = -5.0
+margin_right = 13.5
+margin_bottom = 11.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Ethrium"
+
+[node name="value" type="Label" parent="status/base/eth"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 17.5
+margin_top = -4.0
+margin_right = 46.5
+margin_bottom = 12.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "0"
+align = 1
+
+[node name="acc" type="NinePatchRect" parent="status/base"]
+editor/display_folded = true
+margin_left = 12.0
+margin_top = 115.0
+margin_right = 69.0
+margin_bottom = 130.0
+texture = ExtResource( 33 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="status/base/acc"]
+margin_left = 55.0
+margin_right = 79.0
+margin_bottom = 13.0
+texture = ExtResource( 27 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="accept" type="TextureButton" parent="status/base/acc"]
+margin_left = 61.0
+margin_right = 77.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.8, 0.8 )
+shortcut = SubResource( 4 )
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 35 )
+
+[node name="mag" type="Label" parent="status/base/acc"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.5
+margin_top = -3.5
+margin_right = 27.5
+margin_bottom = 12.5
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Pontos :"
+
+[node name="pontos_atual" type="Label" parent="status/base/acc"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -0.5
+margin_top = -3.5
+margin_right = 57.5
+margin_bottom = 12.5
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "0"
+align = 1
+
+[node name="status" type="NinePatchRect" parent="status"]
+editor/display_folded = true
+visible = false
+margin_left = 83.0
+margin_top = 4.0
+margin_right = 179.0
+margin_bottom = 137.0
+texture = ExtResource( 2 )
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="base" type="NinePatchRect" parent="status/status"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 93.0
+margin_bottom = 130.0
+texture = ExtResource( 22 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="status/status/base"]
+position = Vector2( 28.6472, 26.1629 )
+scale = Vector2( 1.67103, 1.49997 )
+texture = ExtResource( 36 )
+
+[node name="status" type="Label" parent="status/status/base"]
+margin_left = 30.0
+margin_top = 4.0
+margin_right = 68.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "status"
+
+[node name="esc2" type="NinePatchRect" parent="status/status"]
+margin_left = 85.0
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 11.0
+texture = ExtResource( 28 )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="esc" type="TextureButton" parent="status/status/esc2"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 18.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.4, 0.4 )
+shortcut = SubResource( 4 )
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 30 )
+
+[node name="skills" type="NinePatchRect" parent="status"]
+margin_left = 83.0
+margin_top = 4.0
+margin_right = 179.0
+margin_bottom = 137.0
+texture = ExtResource( 2 )
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="base" type="NinePatchRect" parent="status/skills"]
+editor/display_folded = true
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 93.0
+margin_bottom = 130.0
+texture = ExtResource( 22 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="status/skills/base"]
+position = Vector2( 28.6472, 26.1629 )
+scale = Vector2( 1.67103, 1.49997 )
+texture = ExtResource( 36 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="status" type="Label" parent="status/skills/base"]
+margin_left = 30.0
+margin_top = 4.0
+margin_right = 68.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Skills"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="esc2" type="NinePatchRect" parent="status/skills"]
+editor/display_folded = true
+margin_left = 85.0
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 11.0
+texture = ExtResource( 28 )
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="esc" type="TextureButton" parent="status/skills/esc2"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 18.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.4, 0.4 )
+shortcut = SubResource( 4 )
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 30 )
+
+[node name="frost" type="NinePatchRect" parent="status/skills"]
+margin_left = 5.0
+margin_top = 16.0
+margin_right = 91.0
+margin_bottom = 53.0
+texture = ExtResource( 6 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Sprite" type="Sprite" parent="status/skills/frost"]
+position = Vector2( 42.6353, 9.5562 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 37 )
+
+[node name="TextureButton" type="TextureButton" parent="status/skills/frost"]
+margin_left = 65.0
+margin_top = 17.0
+margin_right = 81.0
+margin_bottom = 33.0
+texture_normal = ExtResource( 38 )
+texture_pressed = ExtResource( 39 )
+
+[node name="frost" type="Label" parent="status/skills/frost"]
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 36.0
+margin_bottom = 19.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Frost"
+
+[node name="dano" type="Label" parent="status/skills/frost"]
+margin_left = 5.0
+margin_top = 18.0
+margin_right = 36.0
+margin_bottom = 34.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Dano:"
+
+[node name="nivel" type="Label" parent="status/skills/frost"]
+margin_left = 5.0
+margin_top = 25.0
+margin_right = 41.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Nivel:"
+
+[node name="teste_BD" type="NinePatchRect" parent="."]
+editor/display_folded = true
+visible = false
+margin_left = 2.0
+margin_top = 81.0
+margin_right = 80.0
+margin_bottom = 121.0
+texture = ExtResource( 27 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource( 40 )
+
+[node name="inserir2" type="TextureButton" parent="teste_BD"]
+margin_left = 28.0
+margin_top = 2.0
+margin_right = 44.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 35 )
+
+[node name="resultado2" type="TextureButton" parent="teste_BD"]
+margin_left = 17.0
+margin_top = 15.0
+margin_right = 33.0
+margin_bottom = 31.0
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 35 )
+
+[node name="fechar" type="TextureButton" parent="teste_BD"]
+margin_left = 42.0
+margin_top = 1.0
+margin_right = 58.0
+margin_bottom = 17.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 30 )
+
+[node name="resultado" type="Label" parent="teste_BD"]
+margin_left = 4.0
+margin_top = 27.0
+margin_right = 68.0
+margin_bottom = 43.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color_shadow = Color( 0.726563, 0.377472, 0.377472, 1 )
+text = "Resultado:"
+
+[node name="map" type="Label" parent="teste_BD"]
+margin_left = 38.8197
+margin_top = 26.4525
+margin_right = 102.82
+margin_bottom = 42.4525
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color_shadow = Color( 0.726563, 0.377472, 0.377472, 1 )
+text = "Resultado:"
+
+[node name="valor" type="LineEdit" parent="teste_BD"]
+margin_left = 4.0
+margin_top = 11.0
+margin_right = 88.0
+margin_bottom = 37.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 24 )
+text = "teste"
+
+[node name="inserir" type="LineEdit" parent="teste_BD"]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 24 )
+text = "ID"
+
+[node name="consultar" type="LineEdit" parent="teste_BD"]
+margin_left = 4.0
+margin_top = 22.0
+margin_right = 74.0
+margin_bottom = 48.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = ExtResource( 24 )
+text = "ID"
+
+[node name="chat" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -484.122
+margin_top = -216.953
+margin_right = -289.122
+margin_bottom = -150.953
+rect_pivot_offset = Vector2( 77.5, 24.5 )
+texture = ExtResource( 41 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="chat"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = -27.0
+margin_right = 165.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = ExtResource( 24 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere sollicitudin arcu id commodo. Quisque semper turpis sit amet velit facilisis,"
+
+[node name="ok" type="TextureButton" parent="chat"]
+margin_left = 167.398
+margin_top = 47.464
+margin_right = 183.398
+margin_bottom = 63.464
+texture_normal = ExtResource( 34 )
+texture_pressed = ExtResource( 35 )
+
+[node name="exit" type="TextureButton" parent="chat"]
+margin_left = 178.425
+margin_top = 1.81102
+margin_right = 194.425
+margin_bottom = 17.811
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 30 )
+[connection signal="pressed" from="status/switch/base/base" to="status" method="_on_base_pressed"]
+[connection signal="pressed" from="status/switch/status/status" to="status" method="_on_status_pressed"]
+[connection signal="pressed" from="status/switch/skills/skills" to="status" method="_on_skills_pressed"]
+[connection signal="pressed" from="status/base/esc2/esc" to="status" method="_on_esc_pressed"]
+[connection signal="pressed" from="status/base/magica/mag2" to="status" method="_on_mag2_pressed"]
+[connection signal="pressed" from="status/base/sab/sabe" to="status" method="_on_sabe_pressed"]
+[connection signal="pressed" from="status/base/int/inte" to="status" method="_on_inte_pressed"]
+[connection signal="pressed" from="status/base/eth/ethri" to="status" method="_on_ethri_pressed"]
+[connection signal="pressed" from="status/base/acc/accept" to="status" method="_on_accept_pressed"]
+[connection signal="pressed" from="status/status/esc2/esc" to="status" method="_on_esc_pressed"]
+[connection signal="pressed" from="status/skills/esc2/esc" to="status" method="_on_esc_pressed"]
+[connection signal="pressed" from="status/skills/frost/TextureButton" to="status" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="teste_BD/inserir2" to="teste_BD" method="_on_inserir2_pressed"]
+[connection signal="pressed" from="teste_BD/resultado2" to="teste_BD" method="_on_resultado2_pressed"]
+[connection signal="pressed" from="teste_BD/fechar" to="teste_BD" method="_on_fechar_pressed"]
+[connection signal="text_entered" from="teste_BD/valor" to="teste_BD" method="_on_valor_text_entered"]
+[connection signal="text_entered" from="teste_BD/inserir" to="teste_BD" method="_on_inserir_text_entered"]
+[connection signal="text_entered" from="teste_BD/consultar" to="teste_BD" method="_on_consultar_text_entered"]

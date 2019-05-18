@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/cenario/props/candle/candleanim.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://tileset/light.png" type="Texture" id=2]
+[ext_resource path="res://icons/part_pot.png" type="Texture" id=3]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 162.66
+gravity = Vector3( 0, -98, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.5
+orbit_velocity_random = 1.0
+
+[node name="candle" type="AnimatedSprite"]
+z_index = 2
+frames = ExtResource( 1 )
+playing = true
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0.0852585, 9.05116 )
+texture = ExtResource( 2 )
+texture_scale = 0.1
+color = Color( 0.800781, 0.484677, 0.178299, 1 )
+energy = 1.4
+shadow_enabled = true
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( -0.146706, -0.923334 )
+texture = ExtResource( 2 )
+texture_scale = 0.1
+color = Color( 0.800781, 0.484677, 0.178299, 1 )
+energy = 1.4
+shadow_enabled = true
+
+[node name="CPUParticles2D" type="Particles2D" parent="."]
+modulate = Color( 0.964706, 0.952941, 0.282353, 0.509804 )
+self_modulate = Color( 1, 0.964706, 0.203922, 0.666667 )
+position = Vector2( -0.104679, -7.11783 )
+amount = 2
+lifetime = 0.4
+speed_scale = 0.2
+explosiveness = 0.24
+process_material = SubResource( 1 )
+texture = ExtResource( 3 )

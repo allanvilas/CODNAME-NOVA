@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tileset/block/block1x1.png" type="Texture" id=1]
+[ext_resource path="res://tileset/block/block1.3.png" type="Texture" id=2]
+[ext_resource path="res://tileset/block/block1.6.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6.02964, 15.9287 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.10421, 5.19296 )
+
+[node name="Block_tileset" type="Node2D"]
+
+[node name="block1x1" type="Sprite" parent="." index="0"]
+
+position = Vector2( 16, 16 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="block1x1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block1x1/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="block1-3" type="Sprite" parent="." index="1"]
+
+position = Vector2( 48, 16 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="block1-3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block1-3/StaticBody2D" index="0"]
+
+position = Vector2( 10, 0 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="block1-6" type="Sprite" parent="." index="2"]
+
+position = Vector2( 80, 16 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="block1-6" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block1-6/StaticBody2D" index="0"]
+
+position = Vector2( 10.905, 10.7874 )
+shape = SubResource( 3 )
+
+

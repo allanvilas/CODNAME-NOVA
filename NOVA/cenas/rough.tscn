@@ -1,0 +1,56 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://script/player.gd" type="Script" id=1]
+[ext_resource path="res://assets/personagem/rough/idle1.png" type="Texture" id=2]
+[ext_resource path="res://assets/personagem/rough/idle2.png" type="Texture" id=3]
+[ext_resource path="res://assets/personagem/rough/idle3.png" type="Texture" id=4]
+[ext_resource path="res://assets/personagem/rough/idle4.png" type="Texture" id=5]
+[ext_resource path="res://assets/personagem/rough/idle5.png" type="Texture" id=6]
+[ext_resource path="res://assets/personagem/rough/idle6.png" type="Texture" id=7]
+[ext_resource path="res://assets/personagem/rough/run1.png" type="Texture" id=8]
+[ext_resource path="res://assets/personagem/rough/run2.png" type="Texture" id=9]
+[ext_resource path="res://assets/personagem/rough/run3.png" type="Texture" id=10]
+[ext_resource path="res://assets/personagem/rough/run4.png" type="Texture" id=11]
+[ext_resource path="res://assets/personagem/rough/run5.png" type="Texture" id=12]
+[ext_resource path="res://assets/personagem/rough/run6.png" type="Texture" id=13]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 0.5
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[node name="player" type="KinematicBody2D"]
+z_as_relative = false
+script = ExtResource( 1 )
+
+[node name="body" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="mage" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "cast"
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+drag_margin_left = 0.01
+drag_margin_top = 0.01
+drag_margin_right = 0.01
+drag_margin_bottom = 0.01
+
+[node name="mana_recover" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="animation_finished" from="mage" to="." method="_on_mage_animation_finished"]
+[connection signal="timeout" from="mana_recover" to="." method="_on_mana_recover_timeout"]
