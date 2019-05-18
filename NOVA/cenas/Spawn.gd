@@ -22,6 +22,7 @@ func set_wait_time():
 
 #reajustar função de mapas 
 func spawn_enemy():
+	enemies_in_scene = cena.enemies
 	set_wait_time()
 	if enemies_in_scene.size() <= max_enemies_in_scene:
 		print(add_child(enemie.instance()))

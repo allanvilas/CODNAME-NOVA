@@ -146,7 +146,6 @@ func _on_mage_animation_finished():
 func damage(dano):
 	vida -= dano 
 	if vida <= 0:
-		get_parent().play()
 		get_tree().quit()
 		pass
 	pass

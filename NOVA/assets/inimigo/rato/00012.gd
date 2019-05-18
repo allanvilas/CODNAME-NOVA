@@ -15,6 +15,10 @@ var mana = 50
 var xp = 0
 var nivel = 1
 
+#danos
+export var dano_minimo = 12.0
+export var dano_maximo = 25.0
+
 onready var ray_up = $up
 onready var ray_down = $down
 onready var ray_left = $left
@@ -297,7 +301,8 @@ func _on_vision_body_entered(body):
 ## quando o ia faz contato com o player	
 func _on_attack_area_body_entered(body):
 	if dead == false and body.get_name() == "player":
-		player.damage(randi()%12+13)
+		var dano = int(round(rand_range(dano_minimo,dano_maximo)))
+		player.damage(dano)
 		free_move = true
 		attack_move = false
 		can_move =  false

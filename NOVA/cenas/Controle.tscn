@@ -33,5 +33,6 @@ wait_time = 10.0
 
 [node name="teste" type="Node2D" parent="."]
 script = ExtResource( 4 )
+
 [connection signal="timeout" from="Cena/save_automatico" to="Cena" method="_on_save_automatico_timeout"]
 [connection signal="timeout" from="Spawn/spawn_timer" to="Spawn" method="spawn_enemy"]

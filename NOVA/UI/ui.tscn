@@ -937,6 +937,7 @@ custom_fonts/font = ExtResource( 24 )
 text = "ID"
 
 [node name="chat" type="NinePatchRect" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -979,6 +980,7 @@ margin_right = 194.425
 margin_bottom = 17.811
 texture_normal = ExtResource( 29 )
 texture_pressed = ExtResource( 30 )
+
 [connection signal="pressed" from="status/switch/base/base" to="status" method="_on_base_pressed"]
 [connection signal="pressed" from="status/switch/status/status" to="status" method="_on_status_pressed"]
 [connection signal="pressed" from="status/switch/skills/skills" to="status" method="_on_skills_pressed"]

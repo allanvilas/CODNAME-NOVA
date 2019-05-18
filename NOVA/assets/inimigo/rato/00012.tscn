@@ -3,11 +3,11 @@
 [ext_resource path="res://assets/inimigo/rato/00012.gd" type="Script" id=1]
 [ext_resource path="res://assets/inimigo/rato/ratão-(1)_01.png" type="Texture" id=2]
 [ext_resource path="res://assets/inimigo/rato/ratão-(1)_03.png" type="Texture" id=3]
-[ext_resource path="res://assets/inimigo/rato/ratdead.png" type="Texture" id=4]
-[ext_resource path="res://assets/inimigo/rato/ratão-(1)_02.png" type="Texture" id=5]
-[ext_resource path="res://assets/inimigo/rato/ratão-(1)_04.png" type="Texture" id=6]
-[ext_resource path="res://assets/inimigo/rato/ratão-(1)_05.png" type="Texture" id=7]
-[ext_resource path="res://assets/inimigo/rato/ratão-(1)_06.png" type="Texture" id=8]
+[ext_resource path="res://assets/inimigo/rato/ratão-(1)_02.png" type="Texture" id=4]
+[ext_resource path="res://assets/inimigo/rato/ratão-(1)_04.png" type="Texture" id=5]
+[ext_resource path="res://assets/inimigo/rato/ratão-(1)_05.png" type="Texture" id=6]
+[ext_resource path="res://assets/inimigo/rato/ratão-(1)_06.png" type="Texture" id=7]
+[ext_resource path="res://assets/inimigo/rato/ratdead.png" type="Texture" id=8]
 [ext_resource path="res://tileset/light.png" type="Texture" id=9]
 [ext_resource path="res://fonts/base_font.tres" type="DynamicFont" id=10]
 
@@ -18,15 +18,15 @@ animations = [ {
 "name": "idle",
 "speed": 2.5
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "dead",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "walk",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "dead",
+"speed": 12.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -85,6 +85,7 @@ scale = Vector2( 0.4, 0.4 )
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 1 )
+vida = 80
 
 [node name="up" type="RayCast2D" parent="."]
 position = Vector2( 4.08968e-005, -26 )
@@ -116,7 +117,6 @@ collision_mask = 1024
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Sprite"]
@@ -193,6 +193,7 @@ anims/shwo = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2( 0.4, 0.4 )
+
 [connection signal="body_entered" from="vision" to="." method="_on_vision_body_entered"]
 [connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="timers/dead" to="." method="_on_dead_timeout"]
