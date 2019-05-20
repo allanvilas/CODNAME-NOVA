@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var cena 
+onready var highscore
 
 # normal = 0 *** teste = 1
 export var mode = 0
@@ -84,6 +85,10 @@ func _ready():
 		if root_group[i].get_name() == "Spawn":
 			spawn_ref = root_group[i]
 			print(spawn_ref)
+			pass
+		if root_group[i].get_name() == "highscore":
+			highscore = root_group[i]
+			print(highscore)
 			pass
 		print("------------------------------")
 		pass
@@ -303,6 +308,7 @@ func _on_attack_area_body_entered(body):
 	if dead == false and body.get_name() == "player":
 		var dano = int(round(rand_range(dano_minimo,dano_maximo)))
 		player.damage(dano)
+		highscore.total_dano_recebido += dano
 		free_move = true
 		attack_move = false
 		can_move =  false
@@ -313,6 +319,7 @@ func damage(dano):
 	attack_move = true
 	vida -= dano
 	$damage_text/damage.set_text(str(dano))
+	highscore.total_dano_causado += dano
 	$damage_text/damage_animation.play("shwo")
 	if vida <=0:
 		dead = true
@@ -344,6 +351,7 @@ func _on_dead_timeout():
 	print("Inimigos: "+str(cena.enemies))
 	print("____________________________________")
 	cena.add_xp()
+	highscore.inimigos_mortos += 1
 	queue_free()
 	pass
 

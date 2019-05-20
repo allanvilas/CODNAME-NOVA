@@ -19,7 +19,7 @@ var new_name_player = "player"
 export var mode = 0
 
 #xp
-var valor_base = 75
+var valor_base = 45
 var valor_randi = 12
 
 #database
@@ -79,6 +79,7 @@ func carregar_jogo_salvo():
 	
 func add_xp():
 	player.xp += valor_base
+	get_parent().get_node("highscore").xp_total += valor_base
 	print(player.xp)
 	pass
 	

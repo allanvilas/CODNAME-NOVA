@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://script/Cena.gd" type="Script" id=1]
 [ext_resource path="res://download.png" type="Texture" id=2]
 [ext_resource path="res://cenas/Spawn.gd" type="Script" id=3]
 [ext_resource path="res://cenas/teste.gd" type="Script" id=4]
+[ext_resource path="res://cenas/higscore.gd" type="Script" id=5]
 
 [node name="Controle" type="Node2D"]
 position = Vector2( 0.397217, 0 )
@@ -34,5 +35,14 @@ wait_time = 10.0
 [node name="teste" type="Node2D" parent="."]
 script = ExtResource( 4 )
 
+[node name="highscore" type="Node2D" parent="." groups=[
+"root",
+]]
+script = ExtResource( 5 )
+
+[node name="tempo" type="Timer" parent="highscore"]
+autostart = true
+
 [connection signal="timeout" from="Cena/save_automatico" to="Cena" method="_on_save_automatico_timeout"]
 [connection signal="timeout" from="Spawn/spawn_timer" to="Spawn" method="spawn_enemy"]
+[connection signal="timeout" from="highscore/tempo" to="highscore" method="tempo"]

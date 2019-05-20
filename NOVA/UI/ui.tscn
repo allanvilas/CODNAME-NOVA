@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://UI/ui.gd" type="Script" id=1]
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_40.png" type="Texture" id=2]
@@ -35,12 +35,13 @@
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_20.png" type="Texture" id=33]
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_15.png" type="Texture" id=34]
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_16.png" type="Texture" id=35]
-[ext_resource path="res://UI/menu_novo2.0/omega.png" type="Texture" id=36]
-[ext_resource path="res://UI/frost14.png" type="Texture" id=37]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_35.png" type="Texture" id=38]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_36.png" type="Texture" id=39]
-[ext_resource path="res://UI/test.gd" type="Script" id=40]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_31.png" type="Texture" id=41]
+[ext_resource path="res://UI/base.gd" type="Script" id=36]
+[ext_resource path="res://UI/menu_novo2.0/omega.png" type="Texture" id=37]
+[ext_resource path="res://UI/frost14.png" type="Texture" id=38]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_35.png" type="Texture" id=39]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_36.png" type="Texture" id=40]
+[ext_resource path="res://UI/test.gd" type="Script" id=41]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_31.png" type="Texture" id=42]
 
 [sub_resource type="DynamicFont" id=1]
 use_mipmaps = true
@@ -170,8 +171,6 @@ fill_mode = 4
 radial_initial_angle = 125.0
 
 [node name="status" type="Control" parent="."]
-editor/display_folded = true
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 13 )
@@ -651,8 +650,6 @@ text = "0"
 align = 1
 
 [node name="status" type="NinePatchRect" parent="status"]
-editor/display_folded = true
-visible = false
 margin_left = 83.0
 margin_top = 4.0
 margin_right = 179.0
@@ -676,6 +673,7 @@ patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
+script = ExtResource( 36 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -683,18 +681,99 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="status/status/base"]
 position = Vector2( 28.6472, 26.1629 )
 scale = Vector2( 1.67103, 1.49997 )
-texture = ExtResource( 36 )
+texture = ExtResource( 37 )
 
 [node name="status" type="Label" parent="status/status/base"]
-margin_left = 30.0
-margin_top = 4.0
-margin_right = 68.0
-margin_bottom = 20.0
+margin_left = 6.39969
+margin_top = 3.61311
+margin_right = 44.3997
+margin_bottom = 19.6131
 rect_scale = Vector2( 0.65, 0.65 )
 custom_fonts/font = ExtResource( 24 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "status"
+
+[node name="higscore" type="Label" parent="status/status/base"]
+margin_left = 6.20624
+margin_top = 53.7154
+margin_right = 44.2062
+margin_bottom = 69.7154
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Highscore"
+
+[node name="tempo" type="Label" parent="status/status/base/higscore"]
+margin_left = 0.595215
+margin_top = 19.9397
+margin_right = 57.5952
+margin_bottom = 35.9397
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Tempo Total: "
+
+[node name="xp_total" type="Label" parent="status/status/base/higscore"]
+margin_left = 0.764496
+margin_top = 33.8207
+margin_right = 57.7645
+margin_bottom = 49.8207
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Xp Total:"
+
+[node name="level_maximo" type="Label" parent="status/status/base/higscore"]
+margin_left = 1.10306
+margin_top = 47.363
+margin_right = 58.1031
+margin_bottom = 63.363
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Lv. Maximo:"
+
+[node name="dano_total_causado" type="Label" parent="status/status/base/higscore"]
+margin_left = 0.764465
+margin_top = 60.2283
+margin_right = 57.7645
+margin_bottom = 76.2283
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Dano Causado:"
+
+[node name="dano_total_recebido" type="Label" parent="status/status/base/higscore"]
+margin_left = 1.4416
+margin_top = 73.2628
+margin_right = 58.4416
+margin_bottom = 89.2628
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Dano Recebido:"
+
+[node name="inimigos_derrotados" type="Label" parent="status/status/base/higscore"]
+margin_left = 0.933777
+margin_top = 86.4666
+margin_right = 57.9338
+margin_bottom = 102.467
+rect_scale = Vector2( 0.65, 0.65 )
+custom_fonts/font = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
+text = "Inimigos Mortos:"
+
+[node name="update" type="Timer" parent="status/status/base"]
+wait_time = 2.0
+autostart = true
 
 [node name="esc2" type="NinePatchRect" parent="status/status"]
 margin_left = 85.0
@@ -718,6 +797,7 @@ texture_normal = ExtResource( 29 )
 texture_pressed = ExtResource( 30 )
 
 [node name="skills" type="NinePatchRect" parent="status"]
+visible = false
 margin_left = 83.0
 margin_top = 4.0
 margin_right = 179.0
@@ -749,7 +829,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="status/skills/base"]
 position = Vector2( 28.6472, 26.1629 )
 scale = Vector2( 1.67103, 1.49997 )
-texture = ExtResource( 36 )
+texture = ExtResource( 37 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -807,15 +887,15 @@ patch_margin_bottom = 6
 [node name="Sprite" type="Sprite" parent="status/skills/frost"]
 position = Vector2( 42.6353, 9.5562 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 37 )
+texture = ExtResource( 38 )
 
 [node name="TextureButton" type="TextureButton" parent="status/skills/frost"]
 margin_left = 65.0
 margin_top = 17.0
 margin_right = 81.0
 margin_bottom = 33.0
-texture_normal = ExtResource( 38 )
-texture_pressed = ExtResource( 39 )
+texture_normal = ExtResource( 39 )
+texture_pressed = ExtResource( 40 )
 
 [node name="frost" type="Label" parent="status/skills/frost"]
 margin_left = 5.0
@@ -862,7 +942,7 @@ patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
-script = ExtResource( 40 )
+script = ExtResource( 41 )
 
 [node name="inserir2" type="TextureButton" parent="teste_BD"]
 margin_left = 28.0
@@ -947,7 +1027,7 @@ margin_top = -216.953
 margin_right = -289.122
 margin_bottom = -150.953
 rect_pivot_offset = Vector2( 77.5, 24.5 )
-texture = ExtResource( 41 )
+texture = ExtResource( 42 )
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -990,6 +1070,7 @@ texture_pressed = ExtResource( 30 )
 [connection signal="pressed" from="status/base/int/inte" to="status" method="_on_inte_pressed"]
 [connection signal="pressed" from="status/base/eth/ethri" to="status" method="_on_ethri_pressed"]
 [connection signal="pressed" from="status/base/acc/accept" to="status" method="_on_accept_pressed"]
+[connection signal="timeout" from="status/status/base/update" to="status/status/base" method="_on_update_timeout"]
 [connection signal="pressed" from="status/status/esc2/esc" to="status" method="_on_esc_pressed"]
 [connection signal="pressed" from="status/skills/esc2/esc" to="status" method="_on_esc_pressed"]
 [connection signal="pressed" from="status/skills/frost/TextureButton" to="status" method="_on_TextureButton_pressed"]
