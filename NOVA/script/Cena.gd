@@ -56,6 +56,7 @@ func novo_jogo():
 	add_child(player)
 	camera_control()
 	player._name = new_name_player
+	get_parent().get_node("highscore").create_higscore()
 	player.nivel = 1
 	player.xp = 0
 	player.magica = 0
@@ -94,6 +95,7 @@ func save():
 	db.open_db("res://db/player.sql")
 	update()
 	atualizar_skill()
+	get_parent().get_node("highscore").update_highscore()
 	db.close()
 	pass
 
@@ -103,6 +105,7 @@ func load_game():
 	carregar_jogo_salvo()
 	load_skill_level()
 	camera_control()
+	get_parent().get_node("highscore").fetch_highscore()
 	db.close()
 	pass
 

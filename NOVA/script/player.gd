@@ -144,8 +144,9 @@ func _on_mage_animation_finished():
 	pass # replace with function body
 
 func damage(dano):
-	vida -= dano 
+	vida -= dano
 	if vida <= 0:
+		get_parent().get_parent().get_node("highscore").update_highscore()
 		get_tree().quit()
 		pass
 	pass
@@ -156,7 +157,6 @@ func _on_mana_recover_timeout():
 	else:
 		$mana_recover.stop()
 	pass 
-
 func _on_cell_vs_magnitude_timeout():
 	calculate_points()
 	pass 

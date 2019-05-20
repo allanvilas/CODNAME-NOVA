@@ -36,7 +36,7 @@ var can_move = false
 var attack_move = false
 var solve_attack_move = false
 var velocidade = Vector2(0,0)
-var velocidade_de_mov = 2500
+var velocidade_de_mov = 1500
 
 var state = {move = 0,
 			 attack_move = 0,

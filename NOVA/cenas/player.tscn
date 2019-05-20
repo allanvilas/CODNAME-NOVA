@@ -44,6 +44,7 @@ velocidade = 1.0
 [node name="mage" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "cast"
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
