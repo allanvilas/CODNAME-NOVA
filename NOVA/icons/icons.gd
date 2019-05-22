@@ -11,7 +11,7 @@ func _ready():
 	root = get_tree().get_nodes_in_group("root")
 	for i in root.size():
 		if root[i].get_name() == "Spawn":
-			print("nó spawn foi encontrado em root e definido em icon")
+			#print("nó spawn foi encontrado em root e definido em icon")
 			spawn = root[i]
 			pass
 		pass
@@ -19,6 +19,6 @@ func _ready():
 		for i in used_cells.size():
 			var cell_used = used_cells[i]
 			spawn.cell_position.append(map_to_world(cell_used,false))
-			print("Posição de spawn de inimigos"+str(spawn.cell_position))
+			#print("Posição de spawn de inimigos"+str(spawn.cell_position))
 			pass
 	pass

@@ -10,7 +10,7 @@ func _ready():
 	for i in used_cells.size():
 		var cell_used = used_cells[i]
 		cena.cell_position.append(map_to_world(cell_used,false))
-		print(cena.cell_position)
+		#print(cena.cell_position)
 		i += 1
 		pass
 	pass

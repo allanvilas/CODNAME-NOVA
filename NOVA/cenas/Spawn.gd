@@ -7,9 +7,9 @@ onready var enemie = load("res://assets/inimigo/rato/00012.tscn")
 onready var cena = get_parent().get_node("Cena")
 onready var enemies_in_scene = cena.enemies
 onready var spawn_timer = $spawn_timer
-onready var spawn_wait_time = clamp(float(enemies_in_scene.size()),5,10)
+onready var spawn_wait_time = clamp(float(enemies_in_scene.size()),2,3)
 var cell_position = []
-var max_enemies_in_scene = 15
+var max_enemies_in_scene = 25
 
 func _ready():
 
@@ -23,11 +23,14 @@ func set_wait_time():
 #reajustar função de mapas 
 func spawn_enemy():
 	enemies_in_scene = cena.enemies
+	print("ENEMIES" + str(cena.enemies))
+	print("ENEMIES keys" + str(cena.enemies.keys()))
+	print("ENEMIES keys" + str(cena.enemies.get(1)))
 	set_wait_time()
 	if enemies_in_scene.size() <= max_enemies_in_scene:
 		print(add_child(enemie.instance()))
-		#print(novo.set_position(cell_position[round(rand_range(0.0,float(cell_position.size())))]))
+		print(cena.enemies.get(cena.enemies.size()).set_position(cell_position[round(rand_range(0.0,float(cell_position.size())))-1]))
 		print("inimigo adicionado")
-		print("Cell position icon :   "+str(cell_position))
+		#print("Cell position icon :   "+str(cell_position))
 		pass
 	pass

@@ -44,9 +44,11 @@ var state = {move = 0,
 			 patrol = 0,
 			 free = 0}
 var player
+
 var player_position 
 
 var direction_size
+
 var direction = {
 	up = Vector2(0,-1),
 	down =	Vector2(0,1),
@@ -109,10 +111,10 @@ func _ready():
 		pass
 	id = cena.enemies.size() + 1
 	cena.enemies[id] = self
-	print(cena.enemies)
+	#print(cena.enemies)
 	player = cena.player
 	all_cells.resize(cena.cell_magnitude.size())
-	print(set_position((spawn_ref.cell_position[(round(rand_range(0.0,float(spawn_ref.cell_position.size())))-1)])+Vector2(16,16)))
+	#print(set_position((spawn_ref.cell_position[(round(rand_range(0.0,float(spawn_ref.cell_position.size())))-1)])+Vector2(16,16)))
 	
 	pass
 	
@@ -161,7 +163,7 @@ func patroll_move():
 		pass
 	else:
 		print("Patroll move deu muito errado")
-		print(cena_ref)
+		#print(cena_ref)
 	pass
 	
 	
@@ -347,9 +349,9 @@ func _on_stop_timeout():
 func _on_dead_timeout():
 	var myname = get_name()
 	cena.enemies.erase(myname)
-	print("__________Inimigos em Cena__________")
-	print("Inimigos: "+str(cena.enemies))
-	print("____________________________________")
+	#print("__________Inimigos em Cena__________")
+	#print("Inimigos: "+str(cena.enemies))
+	#print("____________________________________")
 	cena.add_xp()
 	highscore.inimigos_mortos += 1
 	queue_free()
@@ -358,10 +360,10 @@ func _on_dead_timeout():
 func _on_attack_mov_change_timeout():
 	if dead == false and velocidade_de_mov <= 3500:
 		velocidade_de_mov += 100
-		print(velocidade_de_mov)
+	#	print(velocidade_de_mov)
 	else:
 		$timers/attack_mov_change.stop()
-		print("stop")
+		#print("stop")
 		pass
 	pass 
 

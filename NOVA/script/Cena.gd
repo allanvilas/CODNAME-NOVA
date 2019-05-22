@@ -13,7 +13,7 @@ var cell_magnitude = []
 var cell_position = []
 var mapa_used_cells = []
 
-var new_name_player = "player"
+var new_name_player = ""
 
 ##teste // normal = 0 // teste = 1
 export var mode = 0
@@ -142,7 +142,8 @@ func get_db_player_status():
 	player.pos_y = int(att[(0)][("pos_y")])
 	player.xp = int(att[(0)][("xp")])
 	player.nivel = int(att[(0)][("nivel")])
-	player._name = int(att[(0)][("nome")])
+	player._name = str(att[(0)][("nome")])
+	new_name_player = str(att[(0)][("nome")])
 	print("pontos atualizados")
 	pass
 
