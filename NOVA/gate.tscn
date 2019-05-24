@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tileset/backgound_updatefull/masmora_05.png" type="Texture" id=1]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_11.png" type="Texture" id=2]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_16.png" type="Texture" id=3]
+[ext_resource path="res://tileset/backgound_updatefull/masmora_17.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.8723, 15.8614 )
+
+[node name="monster_wall" type="AnimatedSprite"]
+z_index = 2
+frames = SubResource( 1 )
+playing = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+

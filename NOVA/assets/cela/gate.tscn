@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/cela/cela_01.png" type="Texture" id=1]
+[ext_resource path="res://assets/cela/cela_02.png" type="Texture" id=2]
+[ext_resource path="res://assets/cela/cela_03.png" type="Texture" id=3]
+[ext_resource path="res://assets/cela/cela_04.png" type="Texture" id=4]
+[ext_resource path="res://assets/cela/gate.gd" type="Script" id=5]
+[ext_resource path="res://tileset/background_update/masmora_09.png" type="Texture" id=6]
+[ext_resource path="res://tileset/background_update/masmora_10.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "close",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11.992, 2.38799 )
+
+[sub_resource type="CircleShape2D" id=3]
+
+[node name="gate" type="AnimatedSprite"]
+z_index = 2
+frames = SubResource( 1 )
+animation = "close"
+frame = 4
+playing = true
+script = ExtResource( 5 )
+
+[node name="body" type="StaticBody2D" parent="."]
+
+[node name="colli" type="CollisionShape2D" parent="body"]
+position = Vector2( 0, 12.2668 )
+shape = SubResource( 2 )
+
+[node name="up" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="up"]
+position = Vector2( 0, -2.00275 )
+shape = SubResource( 3 )
+
+[node name="down" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 12.2668 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="down"]
+position = Vector2( 0, 14.0192 )
+shape = SubResource( 3 )
+
+[node name="gate_sprite" type="Node2D" parent="."]
+
+[node name="masmora_09" type="Sprite" parent="gate_sprite"]
+z_as_relative = false
+texture = ExtResource( 6 )
+
+[node name="masmora_10" type="Sprite" parent="gate_sprite"]
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 7 )
+
+[connection signal="body_entered" from="up" to="." method="_on_up_body_entered"]
+[connection signal="body_entered" from="down" to="." method="_on_down_body_entered"]

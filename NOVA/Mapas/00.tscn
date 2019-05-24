@@ -80,58 +80,50 @@ position = Vector2( -2.80849, 382.123 )
 
 [node name="candle" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -77.3937, -38.2796 )
-frame = 1
 
 [node name="candle9" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -172.397, -486.088 )
-frame = 1
 
 [node name="candle10" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -206.955, -677.943 )
+frame = 3
 
 [node name="candle2" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -11.9287, -134.223 )
-frame = 1
 
 [node name="candle3" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( 83.4657, -133.696 )
-frame = 2
+frame = 1
 
 [node name="candle4" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( 208.638, -230.145 )
-frame = 2
+frame = 1
 
 [node name="candle5" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -13.5098, -486.287 )
-frame = 2
+frame = 1
 
 [node name="candle6" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -13.7734, -614.094 )
-frame = 2
+frame = 1
 
 [node name="candle7" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( 116.142, -613.83 )
-frame = 1
 
 [node name="candle8" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( 50.5256, -677.866 )
-frame = 1
 
 [node name="monster_wall" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( 51.205, -141.904 )
-frame = 6
 
 [node name="monster_wall6" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( -141.207, -494.055 )
-frame = 6
 
 [node name="monster_wall7" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( -45.0125, -494.204 )
-frame = 5
 
 [node name="monster_wall5" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( -141.021, -686.468 )
-frame = 5
 
 [node name="monster_wall2" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( 114.738, -205.866 )

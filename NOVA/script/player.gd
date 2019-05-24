@@ -79,8 +79,15 @@ func self_update_pos():
 	pos_x = pos.x
 	pos_y = pos.y
 	pass
-	
+
+func self_light_intensity():
+	var vida_lerp = inverse_lerp(0,vida_max,vida)
+	var l_weight = lerp(0.2,1,vida_lerp)
+	$Light2D.set_texture_scale(l_weight)
+	pass
+
 func _physics_process(delta):
+	self_light_intensity()
 	self_update_pos()
 	ui.status_update()
 	var move_up = Input.is_action_pressed("up")
