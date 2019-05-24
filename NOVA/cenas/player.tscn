@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/personagem/mago/walk1.png" type="Texture" id=2]
@@ -33,6 +33,10 @@ animations = [ {
 radius = 1.84232
 height = 5.94503
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 5.48808
+height = 10.9626
+
 [node name="player" type="KinematicBody2D" groups=[
 "root",
 ]]
@@ -44,7 +48,7 @@ velocidade = 1.0
 [node name="mage" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "cast"
-frame = 4
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -63,7 +67,7 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -0.0714493, 12.1932 )
+position = Vector2( -0.0714493, 12.0092 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 color = Color( 0.691406, 0.417106, 0.151245, 1 )
@@ -74,6 +78,16 @@ shadow_enabled = true
 wait_time = 0.5
 autostart = true
 
+[node name="interact" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="vision" type="CollisionShape2D" parent="interact"]
+position = Vector2( 0, 11.7776 )
+shape = SubResource( 3 )
+
 [connection signal="animation_finished" from="mage" to="." method="_on_mage_animation_finished"]
 [connection signal="timeout" from="mana_recover" to="." method="_on_mana_recover_timeout"]
 [connection signal="timeout" from="cell_vs_magnitude" to="." method="_on_cell_vs_magnitude_timeout"]
+[connection signal="body_shape_entered" from="interact" to="." method="obj_entered"]
+[connection signal="body_shape_exited" from="interact" to="." method="obj_exited"]

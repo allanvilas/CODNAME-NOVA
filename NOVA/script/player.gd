@@ -10,6 +10,10 @@ var sabedoria = 5
 var inteligencia = 3
 var ethrium = 5
 
+
+#keys
+export var keys = ["zero","iron"]
+var obj_interact 
 #pos
 var pos = Vector2(0,0)
 var pos_x = 0.0
@@ -85,7 +89,7 @@ func self_light_intensity():
 	var l_weight = lerp(0.2,1,vida_lerp)
 	$Light2D.set_texture_scale(l_weight)
 	pass
-
+	
 func _physics_process(delta):
 	self_light_intensity()
 	self_update_pos()
@@ -95,6 +99,17 @@ func _physics_process(delta):
 	var move_left = Input.is_action_pressed("left")
 	var move_right = Input.is_action_pressed("right")
 	var cast = Input.is_action_just_pressed("cast")
+	var interact = Input.is_action_just_pressed("interact")
+	
+	
+	if obj_interact != null:
+		if interact:
+			print("interagindo")
+			obj_interact.interact()
+			pass
+	else:
+		print("sem objeto")
+		pass
 	
 	var teste = Input.is_action_just_pressed("db")
 	
@@ -166,4 +181,15 @@ func _on_mana_recover_timeout():
 	pass 
 func _on_cell_vs_magnitude_timeout():
 	calculate_points()
+	pass 
+
+func obj_entered(body_id, body, body_shape, area_shape):
+	obj_interact = body.get_parent()
+	obj_interact.player = self
+	print(body.get_parent().get_name())
+	pass
+
+
+func obj_exited(body_id, body, body_shape, area_shape):
+	obj_interact = null
 	pass 

@@ -1,5 +1,5 @@
 extends AnimatedSprite
-
+var root
 onready var player
 onready var gate = self
 onready var collision = $body/colli
@@ -8,17 +8,39 @@ onready var collision = $body/colli
 # false = close
 # true = open
 export var gate_state = false
+export var key = ""
+export var gate_name = ""
 
 func _ready():
+	root = get_tree().get_nodes_in_group("root")
+	for i in root.size():
+		if root[i].get_name() == "player":
+			player = root[i]
+			pass
+		pass
+	gate()
 	pass 
 
 func interact():
+	if player != null:
+		for i in player.keys.size():
+			if player.keys[i] == key:
+				gate_state == true
+				print("Player have the key")
+				gate()
+				pass
+			else:
+				print("Você não tem a chave para acessar " + gate_name + ", retorne com a chave correta!")
+				pass
+		pass
+
+func gate():
 	if gate_state == true:
-		gate.play_animation("open")
+		gate.play("open")
 		collision.set_disabled(true)
 		pass
 	elif gate_state == false:
-		gate.play_animation("close")
+		gate.play("close")
 		collision.set_disabled(false)
 		pass
 	else:
@@ -26,11 +48,3 @@ func interact():
 		collision.set_disabled(false)
 		pass
 	pass
-
-func _on_up_body_entered(body):
-	self.player = body
-	pass 
-
-func _on_down_body_entered(body):
-	self.player = body
-	pass 
