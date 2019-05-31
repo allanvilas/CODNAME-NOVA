@@ -12,7 +12,8 @@ var ethrium = 5
 
 
 #keys
-export var keys = ["zero","iron"]
+var keys = {brass=0,iron=0,gold=0,diamond=0}
+
 var obj_interact 
 #pos
 var pos = Vector2(0,0)

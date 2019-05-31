@@ -49,3 +49,4 @@ z_index = 1
 z_as_relative = false
 texture = ExtResource( 7 )
 
+[connection signal="animation_finished" from="." to="." method="_on_gate_animation_finished"]

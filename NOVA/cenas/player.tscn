@@ -41,14 +41,14 @@ height = 10.9626
 "root",
 ]]
 z_as_relative = false
-collision_mask = 3
+collision_layer = 17
+collision_mask = 19
 script = ExtResource( 1 )
 velocidade = 1.0
 
 [node name="mage" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "cast"
-frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
