@@ -23,7 +23,7 @@ func _ready():
 
 func interact():
 	if player != null:
-		if player.keys[key_names[_kay]] >= 0:
+		if player.keys[key_names[_kay]] > 0:
 			gate_state = true
 			print("Player have the key")
 			gate()

@@ -109,7 +109,7 @@ func _physics_process(delta):
 			obj_interact.interact()
 			pass
 	else:
-		print("sem objeto")
+		#print("sem objeto")
 		pass
 	
 	var teste = Input.is_action_just_pressed("db")

@@ -13,8 +13,8 @@ var cell_weight = []
 
 export var vida = 50
 var mana = 50
-var xp = 0
-var nivel = 1
+export var xp = 0
+export var nivel = 1
 
 #danos
 export var dano_minimo = 12.0
@@ -36,7 +36,7 @@ var can_move = false
 var attack_move = false
 var solve_attack_move = false
 var velocidade = Vector2(0,0)
-var velocidade_de_mov = 1500
+export var velocidade_de_mov = 1500
 
 var state = {move = 0,
 			 attack_move = 0,
@@ -152,8 +152,7 @@ func calculate_nearest():
 			pass
 		
 	pass
-func patroll_move():
-	
+func patroll_move():	
 	if cena_ref != null:
 		self.cell_position = cena_ref.cell_position 
 		calculate_magnitude()

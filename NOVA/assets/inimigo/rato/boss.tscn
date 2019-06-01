@@ -30,8 +30,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 7.98365
-height = 12.7159
+radius = 8.76131
+height = 24.9154
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 225.676
@@ -81,11 +81,13 @@ tracks/2/keys = {
 }
 
 [node name="00012" type="KinematicBody2D"]
-scale = Vector2( 0.4, 0.4 )
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 1 )
-vida = 80
+vida = 500
+dano_minimo = 25.0
+dano_maximo = 30.0
+velocidade_de_mov = 2000
 
 [node name="up" type="RayCast2D" parent="."]
 position = Vector2( 4.08968e-005, -26 )
