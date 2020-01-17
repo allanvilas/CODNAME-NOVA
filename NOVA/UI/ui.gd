@@ -58,9 +58,9 @@ func status_update():
 		
 	#cost
 	#print(player.spells[frost_cost])
-	$skills/frost/cost.set_text(str(player.spells["frost_cost"]))
+	#$skills/frost/cost.set_text(str(player.spells["frost_cost"]))
 	
-	$skills/fire/cost.set_text(str(player.spells["fire_cost"]))	
+	#$skills/fire/cost.set_text(str(player.spells["fire_cost"]))	
 	level_up()
 	pass
 	
@@ -77,3 +77,30 @@ func level_up():
 
 func _on_esc_pressed():
 	pass # replace with function body
+	
+#skills
+onready var skills = [
+		get_node("skills/skill_1"),
+		get_node("skills/skill_2"),
+		get_node("skills/skill_3"),
+		]
+var btn_st = [false,false,false]
+
+func btn_status(A,B,C):
+	btn_st = [A,B,C]
+	skills[0].set_pressed(A)
+	skills[1].set_pressed(B)
+	skills[2].set_pressed(C)
+	pass
+
+func skill_1(button_pressed):
+	btn_status(true,false,false)
+	pass
+
+func skill_2(button_pressed):
+	btn_status(false,true,false)
+	pass
+
+func skill_3(button_pressed):
+	btn_status(false,false,true)
+	pass

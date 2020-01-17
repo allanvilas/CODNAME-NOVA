@@ -78,8 +78,8 @@ func the_path(start,end):
 
 func _ready():
 	
-	add_points(cell)
-	connect_points(cell)
+	#add_points(cell)
+	#connect_points(cell)
 	
 	luz.set_visible(true)
 	cena.mapa_index = mapa_index

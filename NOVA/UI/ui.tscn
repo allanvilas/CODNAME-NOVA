@@ -1,10 +1,10 @@
 [gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://UI/ui.gd" type="Script" id=1]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_40.png" type="Texture" id=2]
-[ext_resource path="res://UI/imagens/skill_bar_03.png" type="Texture" id=3]
-[ext_resource path="res://fonts/Alkhemikal.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://UI/imagens/skill_bar_05.png" type="Texture" id=5]
+[ext_resource path="res://menu/skill_button/normal.png" type="Texture" id=2]
+[ext_resource path="res://menu/skill_button/pressed.png" type="Texture" id=3]
+[ext_resource path="res://menu/skill_button/disabled.png" type="Texture" id=4]
+[ext_resource path="res://fonts/Alkhemikal.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_30.png" type="Texture" id=6]
 [ext_resource path="res://UI/life_bar_empty.png" type="Texture" id=7]
 [ext_resource path="res://UI/life_bar_full.png" type="Texture" id=8]
@@ -21,23 +21,23 @@
 [ext_resource path="res://assets/speels/fire/fire1.png" type="Texture" id=19]
 [ext_resource path="res://assets/speels/fire/fire3.png" type="Texture" id=20]
 [ext_resource path="res://assets/speels/fire/fire2.png" type="Texture" id=21]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_22.png" type="Texture" id=22]
-[ext_resource path="res://UI/menu_novo2.0/elements.png" type="Texture" id=23]
-[ext_resource path="res://fonts/base_font.tres" type="DynamicFont" id=24]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_46.png" type="Texture" id=25]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_49.png" type="Texture" id=26]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_21.png" type="Texture" id=27]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_38.png" type="Texture" id=28]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_08.png" type="Texture" id=29]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_09.png" type="Texture" id=30]
-[ext_resource path="res://tileset/menu_status/menu_novo_06.png" type="Texture" id=31]
-[ext_resource path="res://tileset/menu_status/menu_novo_07.png" type="Texture" id=32]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_20.png" type="Texture" id=33]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_15.png" type="Texture" id=34]
-[ext_resource path="res://UI/menu_novo2.0/menu_novo_16.png" type="Texture" id=35]
-[ext_resource path="res://UI/base.gd" type="Script" id=36]
-[ext_resource path="res://UI/menu_novo2.0/omega.png" type="Texture" id=37]
-[ext_resource path="res://UI/frost14.png" type="Texture" id=38]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_40.png" type="Texture" id=22]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_22.png" type="Texture" id=23]
+[ext_resource path="res://UI/menu_novo2.0/elements.png" type="Texture" id=24]
+[ext_resource path="res://fonts/base_font.tres" type="DynamicFont" id=25]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_46.png" type="Texture" id=26]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_49.png" type="Texture" id=27]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_21.png" type="Texture" id=28]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_38.png" type="Texture" id=29]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_08.png" type="Texture" id=30]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_09.png" type="Texture" id=31]
+[ext_resource path="res://tileset/menu_status/menu_novo_06.png" type="Texture" id=32]
+[ext_resource path="res://tileset/menu_status/menu_novo_07.png" type="Texture" id=33]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_20.png" type="Texture" id=34]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_15.png" type="Texture" id=35]
+[ext_resource path="res://UI/menu_novo2.0/menu_novo_16.png" type="Texture" id=36]
+[ext_resource path="res://UI/base.gd" type="Script" id=37]
+[ext_resource path="res://UI/menu_novo2.0/omega.png" type="Texture" id=38]
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_35.png" type="Texture" id=39]
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_36.png" type="Texture" id=40]
 [ext_resource path="res://UI/test.gd" type="Script" id=41]
@@ -45,10 +45,10 @@
 
 [sub_resource type="DynamicFont" id=1]
 use_mipmaps = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="InputEventAction" id=3]
 pressed = true
@@ -65,43 +65,86 @@ __meta__ = {
 "_edit_vertical_guides_": [ 648.499, 944.385, 863.448, 936.424, 670.0 ]
 }
 
-[node name="skills" type="NinePatchRect" parent="."]
-editor/display_folded = true
+[node name="skills" type="Control" parent="."]
 margin_top = 127.0
-margin_right = 42.0
+margin_right = 207.0
 margin_bottom = 149.0
-texture = ExtResource( 2 )
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
 
-[node name="frost" type="Sprite" parent="skills"]
-position = Vector2( 11.7316, 11.3526 )
-texture = ExtResource( 3 )
+[node name="skill_1" type="TextureButton" parent="skills"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -10.0
+margin_right = 20.0
+margin_bottom = 10.0
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_disabled = ExtResource( 4 )
+expand = true
 
-[node name="cost" type="Label" parent="skills/frost"]
+[node name="skill_1" type="Sprite" parent="skills/skill_1"]
+position = Vector2( 10, 10 )
+
+[node name="cost" type="Label" parent="skills/skill_1/skill_1"]
 margin_top = 1.0
 margin_right = 15.0
 margin_bottom = 17.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "25"
+text = "0"
 
-[node name="fire" type="Sprite" parent="skills"]
-position = Vector2( 29.4197, 11.3863 )
-texture = ExtResource( 5 )
+[node name="skill_2" type="TextureButton" parent="skills"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = -10.0
+margin_right = 40.0
+margin_bottom = 10.0
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_disabled = ExtResource( 4 )
+expand = true
 
-[node name="cost" type="Label" parent="skills/fire"]
-margin_left = -2.0
+[node name="skill_1" type="Sprite" parent="skills/skill_2"]
+position = Vector2( 10, 10 )
+
+[node name="cost" type="Label" parent="skills/skill_2/skill_1"]
+visible = false
 margin_top = 1.0
-margin_right = 13.0
+margin_right = 15.0
 margin_bottom = 17.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "25"
+text = "0"
+
+[node name="skill_3" type="TextureButton" parent="skills"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 40.0
+margin_top = -10.0
+margin_right = 60.0
+margin_bottom = 10.0
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_disabled = ExtResource( 4 )
+expand = true
+
+[node name="skill_1" type="Sprite" parent="skills/skill_3"]
+position = Vector2( 10, 10 )
+
+[node name="cost" type="Label" parent="skills/skill_3/skill_1"]
+visible = false
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 17.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0"
 
 [node name="needs" type="NinePatchRect" parent="."]
 editor/display_folded = true
@@ -256,7 +299,7 @@ margin_left = 83.0
 margin_top = 4.0
 margin_right = 179.0
 margin_bottom = 137.0
-texture = ExtResource( 2 )
+texture = ExtResource( 22 )
 patch_margin_left = 4
 patch_margin_top = 5
 patch_margin_right = 5
@@ -271,7 +314,7 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 93.0
 margin_bottom = 44.0
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -280,7 +323,7 @@ patch_margin_bottom = 5
 [node name="Sprite" type="Sprite" parent="status/base/player"]
 position = Vector2( 21.0102, 21.2629 )
 scale = Vector2( 1.19372, 1.19372 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="PLayer" type="Label" parent="status/base/player"]
 margin_left = 7.0
@@ -288,7 +331,7 @@ margin_top = 7.0
 margin_right = 74.0
 margin_bottom = 23.0
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Player"
@@ -299,7 +342,7 @@ margin_top = 10.0
 margin_right = 123.0
 margin_bottom = 26.0
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "O Aprendiz"
@@ -310,7 +353,7 @@ margin_top = 22.0
 margin_right = 53.0
 margin_bottom = 38.0
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Xp : 0"
@@ -321,7 +364,7 @@ margin_top = 22.0
 margin_right = 105.0
 margin_bottom = 38.0
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Lv : 1"
@@ -334,8 +377,8 @@ margin_top = 25.0
 margin_right = 35.0
 margin_bottom = 40.0
 value = 60.0
-texture_under = ExtResource( 25 )
-texture_progress = ExtResource( 26 )
+texture_under = ExtResource( 26 )
+texture_progress = ExtResource( 27 )
 nine_patch_stretch = true
 stretch_margin_left = 2
 stretch_margin_top = 5
@@ -347,7 +390,7 @@ margin_left = 75.0
 margin_top = 44.0
 margin_right = 92.0
 margin_bottom = 116.0
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -359,7 +402,7 @@ margin_left = 85.0
 margin_top = 1.0
 margin_right = 95.0
 margin_bottom = 11.0
-texture = ExtResource( 28 )
+texture = ExtResource( 29 )
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
@@ -372,8 +415,8 @@ margin_right = 18.0
 margin_bottom = 20.0
 rect_scale = Vector2( 0.4, 0.4 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 30 )
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 31 )
 
 [node name="magica" type="NinePatchRect" parent="status/base"]
 editor/display_folded = true
@@ -381,7 +424,7 @@ margin_left = 4.0
 margin_top = 44.0
 margin_right = 77.0
 margin_bottom = 62.0
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -394,8 +437,8 @@ margin_right = 92.0
 margin_bottom = 23.0
 rect_scale = Vector2( 0.5, 0.5 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 31 )
-texture_pressed = ExtResource( 32 )
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 33 )
 
 [node name="mag" type="Label" parent="status/base/magica"]
 anchor_left = 0.5
@@ -407,7 +450,7 @@ margin_top = -5.0
 margin_right = 13.5
 margin_bottom = 11.0
 rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Magica"
@@ -422,7 +465,7 @@ margin_top = -4.0
 margin_right = 46.5
 margin_bottom = 12.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "0"
@@ -434,7 +477,7 @@ margin_left = 4.0
 margin_top = 62.0
 margin_right = 77.0
 margin_bottom = 80.0
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -447,8 +490,8 @@ margin_right = 92.0
 margin_bottom = 23.0
 rect_scale = Vector2( 0.5, 0.5 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 31 )
-texture_pressed = ExtResource( 32 )
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 33 )
 
 [node name="sab" type="Label" parent="status/base/sab"]
 anchor_left = 0.5
@@ -460,7 +503,7 @@ margin_top = -5.0
 margin_right = 13.5
 margin_bottom = 11.0
 rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Sabedoria"
@@ -475,7 +518,7 @@ margin_top = -4.0
 margin_right = 46.5
 margin_bottom = 12.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "0"
@@ -487,7 +530,7 @@ margin_left = 4.0
 margin_top = 80.0
 margin_right = 77.0
 margin_bottom = 98.0
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -500,8 +543,8 @@ margin_right = 92.0
 margin_bottom = 23.0
 rect_scale = Vector2( 0.5, 0.5 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 31 )
-texture_pressed = ExtResource( 32 )
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 33 )
 
 [node name="int" type="Label" parent="status/base/int"]
 anchor_left = 0.5
@@ -513,7 +556,7 @@ margin_top = -5.0
 margin_right = 13.5
 margin_bottom = 11.0
 rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Inteligência"
@@ -528,7 +571,7 @@ margin_top = -4.0
 margin_right = 46.5
 margin_bottom = 12.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "0"
@@ -540,7 +583,7 @@ margin_left = 4.0
 margin_top = 98.0
 margin_right = 77.0
 margin_bottom = 116.0
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -553,8 +596,8 @@ margin_right = 92.0
 margin_bottom = 23.0
 rect_scale = Vector2( 0.5, 0.5 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 31 )
-texture_pressed = ExtResource( 32 )
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 33 )
 
 [node name="eth" type="Label" parent="status/base/eth"]
 anchor_left = 0.5
@@ -566,7 +609,7 @@ margin_top = -5.0
 margin_right = 13.5
 margin_bottom = 11.0
 rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Ethrium"
@@ -581,7 +624,7 @@ margin_top = -4.0
 margin_right = 46.5
 margin_bottom = 12.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "0"
@@ -593,7 +636,7 @@ margin_left = 12.0
 margin_top = 115.0
 margin_right = 69.0
 margin_bottom = 130.0
-texture = ExtResource( 33 )
+texture = ExtResource( 34 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -603,7 +646,7 @@ patch_margin_bottom = 6
 margin_left = 55.0
 margin_right = 79.0
 margin_bottom = 13.0
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -615,8 +658,8 @@ margin_right = 77.0
 margin_bottom = 18.0
 rect_scale = Vector2( 0.8, 0.8 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 34 )
-texture_pressed = ExtResource( 35 )
+texture_normal = ExtResource( 35 )
+texture_pressed = ExtResource( 36 )
 
 [node name="mag" type="Label" parent="status/base/acc"]
 anchor_left = 0.5
@@ -628,7 +671,7 @@ margin_top = -3.5
 margin_right = 27.5
 margin_bottom = 12.5
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Pontos :"
@@ -643,7 +686,7 @@ margin_top = -3.5
 margin_right = 57.5
 margin_bottom = 12.5
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "0"
@@ -654,7 +697,7 @@ margin_left = 83.0
 margin_top = 4.0
 margin_right = 179.0
 margin_bottom = 137.0
-texture = ExtResource( 2 )
+texture = ExtResource( 22 )
 patch_margin_left = 4
 patch_margin_top = 5
 patch_margin_right = 5
@@ -668,12 +711,12 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 93.0
 margin_bottom = 130.0
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
-script = ExtResource( 36 )
+script = ExtResource( 37 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -681,7 +724,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="status/status/base"]
 position = Vector2( 28.6472, 26.1629 )
 scale = Vector2( 1.67103, 1.49997 )
-texture = ExtResource( 37 )
+texture = ExtResource( 38 )
 
 [node name="status" type="Label" parent="status/status/base"]
 margin_left = 6.39969
@@ -689,7 +732,7 @@ margin_top = 3.61311
 margin_right = 44.3997
 margin_bottom = 19.6131
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "status"
@@ -700,7 +743,7 @@ margin_top = 53.7154
 margin_right = 44.2062
 margin_bottom = 69.7154
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Highscore"
@@ -711,7 +754,7 @@ margin_top = 19.9397
 margin_right = 57.5952
 margin_bottom = 35.9397
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Tempo Total: "
@@ -722,7 +765,7 @@ margin_top = 33.8207
 margin_right = 57.7645
 margin_bottom = 49.8207
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Xp Total:"
@@ -733,7 +776,7 @@ margin_top = 47.363
 margin_right = 58.1031
 margin_bottom = 63.363
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Lv. Maximo:"
@@ -744,7 +787,7 @@ margin_top = 60.2283
 margin_right = 57.7645
 margin_bottom = 76.2283
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Dano Causado:"
@@ -755,7 +798,7 @@ margin_top = 73.2628
 margin_right = 58.4416
 margin_bottom = 89.2628
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Dano Recebido:"
@@ -766,7 +809,7 @@ margin_top = 86.4666
 margin_right = 57.9338
 margin_bottom = 102.467
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Inimigos Mortos:"
@@ -780,7 +823,7 @@ margin_left = 85.0
 margin_top = 1.0
 margin_right = 95.0
 margin_bottom = 11.0
-texture = ExtResource( 28 )
+texture = ExtResource( 29 )
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
@@ -793,16 +836,15 @@ margin_right = 18.0
 margin_bottom = 20.0
 rect_scale = Vector2( 0.4, 0.4 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 30 )
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 31 )
 
 [node name="skills" type="NinePatchRect" parent="status"]
-visible = false
 margin_left = 83.0
 margin_top = 4.0
 margin_right = 179.0
 margin_bottom = 137.0
-texture = ExtResource( 2 )
+texture = ExtResource( 22 )
 patch_margin_left = 4
 patch_margin_top = 5
 patch_margin_right = 5
@@ -817,7 +859,7 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 93.0
 margin_bottom = 130.0
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
@@ -829,7 +871,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="status/skills/base"]
 position = Vector2( 28.6472, 26.1629 )
 scale = Vector2( 1.67103, 1.49997 )
-texture = ExtResource( 37 )
+texture = ExtResource( 38 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -840,7 +882,7 @@ margin_top = 4.0
 margin_right = 68.0
 margin_bottom = 20.0
 rect_scale = Vector2( 0.65, 0.65 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.294266, 0.294266, 1 )
 text = "Skills"
@@ -854,7 +896,7 @@ margin_left = 85.0
 margin_top = 1.0
 margin_right = 95.0
 margin_bottom = 11.0
-texture = ExtResource( 28 )
+texture = ExtResource( 29 )
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
@@ -870,10 +912,11 @@ margin_right = 18.0
 margin_bottom = 20.0
 rect_scale = Vector2( 0.4, 0.4 )
 shortcut = SubResource( 4 )
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 30 )
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 31 )
 
-[node name="frost" type="NinePatchRect" parent="status/skills"]
+[node name="skill_1" type="NinePatchRect" parent="status/skills"]
+editor/display_folded = true
 margin_left = 5.0
 margin_top = 16.0
 margin_right = 91.0
@@ -884,12 +927,11 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Sprite" type="Sprite" parent="status/skills/frost"]
+[node name="Sprite" type="Sprite" parent="status/skills/skill_1"]
 position = Vector2( 42.6353, 9.5562 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 38 )
 
-[node name="TextureButton" type="TextureButton" parent="status/skills/frost"]
+[node name="add_skill_1" type="TextureButton" parent="status/skills/skill_1"]
 margin_left = 65.0
 margin_top = 17.0
 margin_right = 81.0
@@ -897,35 +939,149 @@ margin_bottom = 33.0
 texture_normal = ExtResource( 39 )
 texture_pressed = ExtResource( 40 )
 
-[node name="frost" type="Label" parent="status/skills/frost"]
+[node name="frost" type="Label" parent="status/skills/skill_1"]
 margin_left = 5.0
 margin_top = 3.0
 margin_right = 36.0
 margin_bottom = 19.0
 rect_scale = Vector2( 0.8, 0.8 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
-text = "Frost"
+text = "Skill Name"
 
-[node name="dano" type="Label" parent="status/skills/frost"]
+[node name="dano" type="Label" parent="status/skills/skill_1"]
 margin_left = 5.0
 margin_top = 18.0
 margin_right = 36.0
 margin_bottom = 34.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
 text = "Dano:"
 
-[node name="nivel" type="Label" parent="status/skills/frost"]
+[node name="nivel" type="Label" parent="status/skills/skill_1"]
 margin_left = 5.0
 margin_top = 25.0
 margin_right = 41.0
 margin_bottom = 41.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Nivel:"
+
+[node name="skill_2" type="NinePatchRect" parent="status/skills"]
+editor/display_folded = true
+margin_left = 5.0
+margin_top = 53.0
+margin_right = 91.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Sprite" type="Sprite" parent="status/skills/skill_2"]
+position = Vector2( 42.6353, 9.5562 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="add_skill_2" type="TextureButton" parent="status/skills/skill_2"]
+margin_left = 65.0
+margin_top = 17.0
+margin_right = 81.0
+margin_bottom = 33.0
+texture_normal = ExtResource( 39 )
+texture_pressed = ExtResource( 40 )
+
+[node name="frost" type="Label" parent="status/skills/skill_2"]
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 36.0
+margin_bottom = 19.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Skill Name"
+
+[node name="dano" type="Label" parent="status/skills/skill_2"]
+margin_left = 5.0
+margin_top = 18.0
+margin_right = 36.0
+margin_bottom = 34.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Dano:"
+
+[node name="nivel" type="Label" parent="status/skills/skill_2"]
+margin_left = 5.0
+margin_top = 25.0
+margin_right = 41.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Nivel:"
+
+[node name="skill_3" type="NinePatchRect" parent="status/skills"]
+editor/display_folded = true
+margin_left = 5.0
+margin_top = 90.25
+margin_right = 91.0
+margin_bottom = 127.25
+texture = ExtResource( 6 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Sprite" type="Sprite" parent="status/skills/skill_3"]
+position = Vector2( 42.6353, 9.5562 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="add_skill_3" type="TextureButton" parent="status/skills/skill_3"]
+margin_left = 65.0
+margin_top = 17.0
+margin_right = 81.0
+margin_bottom = 33.0
+texture_normal = ExtResource( 39 )
+texture_pressed = ExtResource( 40 )
+
+[node name="frost" type="Label" parent="status/skills/skill_3"]
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 36.0
+margin_bottom = 19.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Skill Name"
+
+[node name="dano" type="Label" parent="status/skills/skill_3"]
+margin_left = 5.0
+margin_top = 18.0
+margin_right = 36.0
+margin_bottom = 34.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
+text = "Dano:"
+
+[node name="nivel" type="Label" parent="status/skills/skill_3"]
+margin_left = 5.0
+margin_top = 25.0
+margin_right = 41.0
+margin_bottom = 41.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
 text = "Nivel:"
@@ -937,7 +1093,7 @@ margin_left = 2.0
 margin_top = 81.0
 margin_right = 80.0
 margin_bottom = 121.0
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -949,16 +1105,16 @@ margin_left = 28.0
 margin_top = 2.0
 margin_right = 44.0
 margin_bottom = 18.0
-texture_normal = ExtResource( 34 )
-texture_pressed = ExtResource( 35 )
+texture_normal = ExtResource( 35 )
+texture_pressed = ExtResource( 36 )
 
 [node name="resultado2" type="TextureButton" parent="teste_BD"]
 margin_left = 17.0
 margin_top = 15.0
 margin_right = 33.0
 margin_bottom = 31.0
-texture_normal = ExtResource( 34 )
-texture_pressed = ExtResource( 35 )
+texture_normal = ExtResource( 35 )
+texture_pressed = ExtResource( 36 )
 
 [node name="fechar" type="TextureButton" parent="teste_BD"]
 margin_left = 42.0
@@ -966,8 +1122,8 @@ margin_top = 1.0
 margin_right = 58.0
 margin_bottom = 17.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 30 )
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 31 )
 
 [node name="resultado" type="Label" parent="teste_BD"]
 margin_left = 4.0
@@ -975,7 +1131,7 @@ margin_top = 27.0
 margin_right = 68.0
 margin_bottom = 43.0
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color_shadow = Color( 0.726563, 0.377472, 0.377472, 1 )
 text = "Resultado:"
 
@@ -985,7 +1141,7 @@ margin_top = 26.4525
 margin_right = 102.82
 margin_bottom = 42.4525
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 custom_colors/font_color_shadow = Color( 0.726563, 0.377472, 0.377472, 1 )
 text = "Resultado:"
 
@@ -995,7 +1151,7 @@ margin_top = 11.0
 margin_right = 88.0
 margin_bottom = 37.0
 rect_scale = Vector2( 0.3, 0.3 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 text = "teste"
 
 [node name="inserir" type="LineEdit" parent="teste_BD"]
@@ -1004,7 +1160,7 @@ margin_top = 5.0
 margin_right = 74.0
 margin_bottom = 31.0
 rect_scale = Vector2( 0.2, 0.2 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 text = "ID"
 
 [node name="consultar" type="LineEdit" parent="teste_BD"]
@@ -1013,7 +1169,7 @@ margin_top = 22.0
 margin_right = 74.0
 margin_bottom = 48.0
 rect_scale = Vector2( 0.2, 0.2 )
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 25 )
 text = "ID"
 
 [node name="chat" type="NinePatchRect" parent="."]
@@ -1042,7 +1198,7 @@ margin_top = -27.0
 margin_right = 165.0
 margin_bottom = 62.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/normal_font = ExtResource( 24 )
+custom_fonts/normal_font = ExtResource( 25 )
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere sollicitudin arcu id commodo. Quisque semper turpis sit amet velit facilisis,"
 
 [node name="ok" type="TextureButton" parent="chat"]
@@ -1050,17 +1206,19 @@ margin_left = 167.398
 margin_top = 47.464
 margin_right = 183.398
 margin_bottom = 63.464
-texture_normal = ExtResource( 34 )
-texture_pressed = ExtResource( 35 )
+texture_normal = ExtResource( 35 )
+texture_pressed = ExtResource( 36 )
 
 [node name="exit" type="TextureButton" parent="chat"]
 margin_left = 178.425
 margin_top = 1.81102
 margin_right = 194.425
 margin_bottom = 17.811
-texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 30 )
-
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 31 )
+[connection signal="toggled" from="skills/skill_1" to="." method="skill_1"]
+[connection signal="toggled" from="skills/skill_2" to="." method="skill_2"]
+[connection signal="toggled" from="skills/skill_3" to="." method="skill_3"]
 [connection signal="pressed" from="status/switch/base/base" to="status" method="_on_base_pressed"]
 [connection signal="pressed" from="status/switch/status/status" to="status" method="_on_status_pressed"]
 [connection signal="pressed" from="status/switch/skills/skills" to="status" method="_on_skills_pressed"]
@@ -1073,7 +1231,9 @@ texture_pressed = ExtResource( 30 )
 [connection signal="timeout" from="status/status/base/update" to="status/status/base" method="_on_update_timeout"]
 [connection signal="pressed" from="status/status/esc2/esc" to="status" method="_on_esc_pressed"]
 [connection signal="pressed" from="status/skills/esc2/esc" to="status" method="_on_esc_pressed"]
-[connection signal="pressed" from="status/skills/frost/TextureButton" to="status" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="status/skills/skill_1/add_skill_1" to="status" method="add_skill_1"]
+[connection signal="pressed" from="status/skills/skill_2/add_skill_2" to="status" method="add_skill_2"]
+[connection signal="pressed" from="status/skills/skill_3/add_skill_3" to="status" method="add_skill_3"]
 [connection signal="pressed" from="teste_BD/inserir2" to="teste_BD" method="_on_inserir2_pressed"]
 [connection signal="pressed" from="teste_BD/resultado2" to="teste_BD" method="_on_resultado2_pressed"]
 [connection signal="pressed" from="teste_BD/fechar" to="teste_BD" method="_on_fechar_pressed"]

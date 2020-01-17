@@ -49,6 +49,7 @@ velocidade = 1.0
 [node name="mage" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "cast"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -85,7 +86,6 @@ collision_mask = 16
 [node name="vision" type="CollisionShape2D" parent="interact"]
 position = Vector2( 0, 11.7776 )
 shape = SubResource( 3 )
-
 [connection signal="animation_finished" from="mage" to="." method="_on_mage_animation_finished"]
 [connection signal="timeout" from="mana_recover" to="." method="_on_mana_recover_timeout"]
 [connection signal="timeout" from="cell_vs_magnitude" to="." method="_on_cell_vs_magnitude_timeout"]

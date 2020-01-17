@@ -126,31 +126,31 @@ frame = 2
 
 [node name="monster_wall" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( 51.205, -141.904 )
-frame = 6
+frame = 5
 
 [node name="monster_wall6" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( -141.207, -494.055 )
-frame = 6
+frame = 5
 
 [node name="monster_wall7" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( -45.0125, -494.204 )
-frame = 6
+frame = 5
 
 [node name="monster_wall5" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( -141.021, -686.468 )
-frame = 6
+frame = 5
 
 [node name="monster_wall2" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( 114.738, -205.866 )
-frame = 6
+frame = 5
 
 [node name="monster_wall3" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( 146.852, -398.043 )
-frame = 6
+frame = 5
 
 [node name="monster_wall4" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( 82.5537, -493.944 )
-frame = 6
+frame = 5
 
 [node name="bau" parent="envirorment" instance=ExtResource( 9 )]
 position = Vector2( -1091.06, -431.532 )
@@ -233,4 +233,3 @@ position = Vector2( -87.4236, 439.031 )
 [node name="key2" parent="keys" instance=ExtResource( 15 )]
 position = Vector2( 214.045, 245.103 )
 key = 1
-

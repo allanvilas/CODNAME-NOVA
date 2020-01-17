@@ -1,6 +1,5 @@
 extends Control
 
-
 var player
 
 func _ready():
@@ -56,7 +55,6 @@ func _on_ethri_pressed():
 func _on_accept_pressed():
 	pass # replace with function body
 
-
 ### troca de menûs
 func _on_base_pressed():
 	$base.set_visible(true)
@@ -64,13 +62,11 @@ func _on_base_pressed():
 	$skills.set_visible(false)
 	pass # replace with function body
 
-
 func _on_status_pressed():
 	$base.set_visible(false)
 	$skills.set_visible(false)
 	$status.set_visible(true)
 	pass # replace with function body
-
 
 func _on_skills_pressed():
 	$skills.set_visible(true)
@@ -78,12 +74,12 @@ func _on_skills_pressed():
 	$base.set_visible(false)
 	pass 
 
-
 #botão add da skill frost
-func _on_TextureButton_pressed():
-	
-	if player.pontos_skill > 0:
-		player.frost["nivel"] += 1
-		player.pontos_skill -= 1
-		print(player.frost["nivel"])
+func add_skill_1():
+	pass
+
+func add_skill_2():
+	pass 
+
+func add_skill_3():
 	pass 

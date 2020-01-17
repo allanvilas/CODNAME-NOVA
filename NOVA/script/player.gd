@@ -10,7 +10,6 @@ var sabedoria = 5
 var inteligencia = 3
 var ethrium = 5
 
-
 #keys
 var keys = {brass=0,iron=0,gold=0,diamond=0}
 
@@ -102,8 +101,7 @@ func _physics_process(delta):
 	var cast = Input.is_action_just_pressed("cast")
 	var interact = Input.is_action_just_pressed("interact")
 	
-	
-	if obj_interact != null:
+	if obj_interact != null && obj_interact.has_method("interact"):
 		if interact:
 			print("interagindo")
 			obj_interact.interact()
@@ -189,7 +187,6 @@ func obj_entered(body_id, body, body_shape, area_shape):
 	obj_interact.player = self
 	print(body.get_parent().get_name())
 	pass
-
 
 func obj_exited(body_id, body, body_shape, area_shape):
 	obj_interact = null
