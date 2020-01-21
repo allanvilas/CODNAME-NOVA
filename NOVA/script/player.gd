@@ -32,7 +32,7 @@ var pontos_skill = 1
 #skillset
 #1 frost
 #2 fire
-var skill_set = "frost_cost"
+var skill_set = null
 
 #Movimento
 var move = Vector2(0,0)
@@ -42,16 +42,6 @@ export var velocidade = 1.3
 onready var anim = $mage
 
 #Cast
-var spells = {
-	frost_cost = 10,
-	fire_cost = 25
-}
-var frost = {
-	nivel = 1,
-	base = 15,
-	dano = 0
-}
-
 var casting = false
 var can_attack = true
 
@@ -134,24 +124,25 @@ func _physics_process(delta):
 			anim.set_animation("idle")	
 			
 		if cast and can_attack == true:
-			print(skill_set)
-			if mana >= spells[skill_set]:
+			#print(skill_set)
+			if mana >= speel.skil_set["dano"] and skill_set != null:
 				casting = true
 				anim.set_animation("cast")
 				anim.play()
 				move = Vector2(0,0)
 				var spel = load("res://cenas/speel.tscn").instance()
+				spel.skil_set[skill_set]
 				cast_speel(spel)
-				mana -= spells[skill_set]
+				mana -= speel.skil_set.dano
 				if mana <= mana_max:
 					$mana_recover.start()
 			else:
-				print("____----''''Sem mana!!!''''----____")
+				#print("____----''''Sem mana!!!''''----____")
+				pass
 	move_and_collide(move * velocidade)	
 	pass
 
 func cast_speel(speel):
-	speel.skill_damage = frost["dano"]
 	get_parent().add_child(speel)
 	speel.set_position(get_global_mouse_position())
 	pass

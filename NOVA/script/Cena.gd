@@ -149,15 +149,15 @@ func get_db_player_status():
 
 func atualizar_skill():
 	var skill = "UPDATE skill "
-	skill += "set frost_nivel = "+ str(player.frost["nivel"])
-	skill += " WHERE id = " + str(save_id) + ";"
+	#skill += "set frost_nivel = "+ str(player.frost["nivel"])
+	#skill += " WHERE id = " + str(save_id) + ";"
 	print(skill)
 	pass
 	
 func load_skill_level():
 	var att
 	att = db.fetch_array("SELECT frost_nivel FROM skill WHERE id = " + str(save_id) + ";")
-	player.frost["nivel"] = int(att[(0)][("frost_nivel")])
+#	player.frost["nivel"] = int(att[(0)][("frost_nivel")])
 	pass
 	
 func _on_save_automatico_timeout():

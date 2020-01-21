@@ -916,7 +916,6 @@ texture_normal = ExtResource( 30 )
 texture_pressed = ExtResource( 31 )
 
 [node name="skill_1" type="NinePatchRect" parent="status/skills"]
-editor/display_folded = true
 margin_left = 5.0
 margin_top = 16.0
 margin_right = 91.0
@@ -939,7 +938,7 @@ margin_bottom = 33.0
 texture_normal = ExtResource( 39 )
 texture_pressed = ExtResource( 40 )
 
-[node name="frost" type="Label" parent="status/skills/skill_1"]
+[node name="name" type="Label" parent="status/skills/skill_1"]
 margin_left = 5.0
 margin_top = 3.0
 margin_right = 36.0
@@ -973,7 +972,6 @@ custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
 text = "Nivel:"
 
 [node name="skill_2" type="NinePatchRect" parent="status/skills"]
-editor/display_folded = true
 margin_left = 5.0
 margin_top = 53.0
 margin_right = 91.0
@@ -996,7 +994,7 @@ margin_bottom = 33.0
 texture_normal = ExtResource( 39 )
 texture_pressed = ExtResource( 40 )
 
-[node name="frost" type="Label" parent="status/skills/skill_2"]
+[node name="name" type="Label" parent="status/skills/skill_2"]
 margin_left = 5.0
 margin_top = 3.0
 margin_right = 36.0
@@ -1030,7 +1028,6 @@ custom_colors/font_color_shadow = Color( 0.625, 0.317383, 0.317383, 1 )
 text = "Nivel:"
 
 [node name="skill_3" type="NinePatchRect" parent="status/skills"]
-editor/display_folded = true
 margin_left = 5.0
 margin_top = 90.25
 margin_right = 91.0
@@ -1053,7 +1050,7 @@ margin_bottom = 33.0
 texture_normal = ExtResource( 39 )
 texture_pressed = ExtResource( 40 )
 
-[node name="frost" type="Label" parent="status/skills/skill_3"]
+[node name="name" type="Label" parent="status/skills/skill_3"]
 margin_left = 5.0
 margin_top = 3.0
 margin_right = 36.0

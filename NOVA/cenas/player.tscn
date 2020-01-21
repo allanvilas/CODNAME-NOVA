@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/personagem/mago/walk1.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/personagem/mago/walk3.png" type="Texture" id=8]
 [ext_resource path="res://assets/personagem/mago/walk4.png" type="Texture" id=9]
 [ext_resource path="res://tileset/light.png" type="Texture" id=10]
+[ext_resource path="res://cenas/skills.gd" type="Script" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -49,7 +50,7 @@ velocidade = 1.0
 [node name="mage" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "cast"
-frame = 1
+frame = 5
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -86,6 +87,9 @@ collision_mask = 16
 [node name="vision" type="CollisionShape2D" parent="interact"]
 position = Vector2( 0, 11.7776 )
 shape = SubResource( 3 )
+
+[node name="skills" type="Node2D" parent="."]
+script = ExtResource( 11 )
 [connection signal="animation_finished" from="mage" to="." method="_on_mage_animation_finished"]
 [connection signal="timeout" from="mana_recover" to="." method="_on_mana_recover_timeout"]
 [connection signal="timeout" from="cell_vs_magnitude" to="." method="_on_cell_vs_magnitude_timeout"]

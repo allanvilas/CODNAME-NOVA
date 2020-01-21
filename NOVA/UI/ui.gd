@@ -33,11 +33,16 @@ func status_update():
 	
 	if Input.is_action_just_pressed("1"):
 		print("um")
-		player.skill_set = "frost_cost"
+		player.skill_set = "skill_1"
+		pass
 	elif Input.is_action_just_pressed("2"):
 		print("dois")
-		player.skill_set = "fire_cost"
-
+		player.skill_set = "skill_2"
+		pass
+	elif Input.is_action_just_pressed("3"):
+		print("três")
+		player.skill_set = "skill_3"
+		pass
 	# menu status
 	if Input.is_action_just_pressed("status"):
 		if player.can_attack == true:
@@ -95,12 +100,15 @@ func btn_status(A,B,C):
 
 func skill_1(button_pressed):
 	btn_status(true,false,false)
+	player.skill_set = "skill_1"
 	pass
 
 func skill_2(button_pressed):
 	btn_status(false,true,false)
+	player.skill_set = "skill_2"
 	pass
 
 func skill_3(button_pressed):
 	btn_status(false,false,true)
+	player.skill_set = "skill_3"
 	pass

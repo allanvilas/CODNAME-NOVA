@@ -10,10 +10,10 @@ func atualizar_valores():
 	$base/sab/value.set_text(str(player.sabedoria))
 	$base/int/value.set_text(str(player.inteligencia))
 	$base/eth/value.set_text(str(player.ethrium))
-	$skills/frost/nivel.set_text("Nivel:" + str(player.frost["nivel"]))
-	var dano_base = int(player.frost["base"])+(int(player.frost["nivel"] * 5))
-	$skills/frost/dano.set_text("Dano:" + str(dano_base + ((dano_base*0.01) * player.magica)))
-	player.frost["dano"] = int($skills/frost/dano.get_text())
+	#$skills/frost/nivel.set_text("Nivel:" + str(player.frost["nivel"]))
+	#var dano_base = int(player.frost["base"])+(int(player.frost["nivel"] * 5))
+	#$skills/frost/dano.set_text("Dano:" + str(dano_base + ((dano_base*0.01) * player.magica)))
+	#player.frost["dano"] = int($skills/frost/dano.get_text())
 func _on_esc_pressed():
 	self.set_visible(false)
 	get_parent().player.can_attack = true
@@ -76,10 +76,25 @@ func _on_skills_pressed():
 
 #botão add da skill frost
 func add_skill_1():
+	var skill_1 = player.get_node("skills").skill["skill_1"]
+	$skills/skill_1/Sprite.set_texture(skill_1["sprite"])
+	$skills/skill_1/name.set_text(skill_1["nome"])
+	$skills/skill_1/dano.set_text(skill_1["dano"])
+	$skills/skill_1/nivel.set_text(skill_1["level"])
 	pass
 
 func add_skill_2():
+	var skill_2 = player.get_node("skills").skill["skill_1"]
+	$skills/skill_2/Sprite.set_texture(skill_2["sprite"])
+	$skills/skill_2/name.set_text(skill_2["nome"])
+	$skills/skill_2/dano.set_text(skill_2["dano"])
+	$skills/skill_2/nivel.set_text(skill_2["level"])
 	pass 
 
 func add_skill_3():
+	var skill_3 = player.get_node("skills").skill["skill_1"]
+	$skills/skill_3/Sprite.set_texture(skill_3["sprite"])
+	$skills/skill_3/name.set_text(skill_3["nome"])
+	$skills/skill_3/dano.set_text(skill_3["dano"])
+	$skills/skill_3/nivel.set_text(skill_3["level"])
 	pass 
