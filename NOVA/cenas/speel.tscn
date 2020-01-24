@@ -57,7 +57,7 @@ shape = SubResource( 1 )
 [node name="speels" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "Blast"
-frame = 4
+frame = 5
 playing = true
 
 [node name="when_speel_anim_finish" type="Timer" parent="."]

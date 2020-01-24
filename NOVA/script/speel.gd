@@ -24,9 +24,9 @@ func _ready():
 	print("!!!Teste: "+str(skill))
 	print("!!!Teste: "+str(skill))
 	#assim que a skill sofre a instance()
-	anim.set_animation(skil_set["nome"])
 	print(skil_set["nome"])
 	if skil_set["learned"] == true:
+		anim.set_animation(skil_set["nome"])
 		anim.set_frame(0)
 		anim.play()
 		return

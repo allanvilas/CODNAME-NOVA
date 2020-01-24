@@ -34,18 +34,30 @@ func status_update():
 	
 	if Input.is_action_just_pressed("1"):
 		print("um")
-		player.skill_set = "skill_1"
-		btn_status(true,false,false)
+		if player.get_node("skills").skill["skill_1"]["learned"] == true:
+			player.skill_set = "skill_1"
+			btn_status(false,true,false)
+		else:
+			get_node("skills/skill_1").set_disabled(true)
+			pass
 		pass
 	elif Input.is_action_just_pressed("2"):
 		print("dois")
-		player.skill_set = "skill_2"
-		btn_status(false,true,false)
+		if player.get_node("skills").skill["skill_2"]["learned"] == true:
+			player.skill_set = "skill_2"
+			btn_status(false,true,false)
+		else:
+			get_node("skills/skill_2").set_disabled(true)
+			pass
 		pass
 	elif Input.is_action_just_pressed("3"):
 		print("três")
-		player.skill_set = "skill_3"
-		btn_status(false,false,true)
+		if player.get_node("skills").skill["skill_3"]["learned"] == true:
+			player.skill_set = "skill_2"
+			btn_status(false,false,true)
+		else:
+			get_node("skills/skill_3").set_disabled(true)
+			pass
 		pass
 	# menu status
 	if Input.is_action_just_pressed("status"):
@@ -103,16 +115,19 @@ func btn_status(A,B,C):
 	pass
 
 func skill_1(button_pressed):
-	btn_status(true,false,false)
-	player.skill_set = "skill_1"
+	if not skills[0].is_disabled():
+		btn_status(true,false,false)
+		player.skill_set = "skill_1"
 	pass
 
 func skill_2(button_pressed):
-	btn_status(false,true,false)
-	player.skill_set = "skill_2"
+	if not skills[1].is_disabled():
+		btn_status(false,true,false)
+		player.skill_set = "skill_2"
 	pass
 
 func skill_3(button_pressed):
-	btn_status(false,false,true)
-	player.skill_set = "skill_3"
+	if not skills[2].is_disabled():
+		btn_status(false,false,true)
+		player.skill_set = "skill_3"
 	pass
