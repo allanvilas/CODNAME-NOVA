@@ -1,7 +1,7 @@
 extends Control
 
-var player
-
+onready var pop = get_parent().get_node("PopupDialog")
+onready var player
 func _ready():
 	pass
 
@@ -23,6 +23,7 @@ func _on_mag2_pressed():
 	if player.pontos > 0:
 		player.pontos -= 1
 		player.magica += 1
+		player.get_node("skills")
 		
 	else:
 		print("pontos insuficientes")
@@ -75,26 +76,71 @@ func _on_skills_pressed():
 	pass 
 
 #botão add da skill frost
+var player_skill_dict
+func up_skill(index):
+	var psd = player_skill_dict["skill_"+str(index)]
+	
+	
+	if player.pontos_skill >=1:
+		if player.nivel <= psd["min_level"]:
+			pop.popup()
+			pop.get_node("TXT").set_text("Você não tem level suficiente, volte quando alcançar o level "+str(psd["min_level"]))
+			print("Você não tem level suficiente, volte quando alcançar o level "+str(psd["min_level"]))
+		else:
+			psd["level"] += 1
+			#player.pontos_skill -=1
+			psd["learned"] = true
+			pop.popup()
+			pop.get_node("TXT").set_text("Você evoluiu a skill "+str(psd["nome"]))
+			psd["mod_dmg"] += psd["dmg_index"]
+			psd["mod_cost"] += psd["cost_index"]
+			psd["dano"] = psd["dano_base"] +( psd["dano_base"] * psd["mod_dmg"] )
+			psd["custo"] = psd["custo_base"] +( psd["custo_base"] * psd["mod_cost"] )
+			print(psd)
+			pass
+	else:
+		pop.popup()
+		pop.get_node("TXT").set_text("Você não tem pontos disponíveis!")
+		pass
+		
+	if psd["learned"]:
+		if not skills_learned.has(psd):
+			skills_learned.append(psd)
+		pass	
+	pass
+var skills_learned = []
+
 func add_skill_1():
-	var skill_1 = player.get_node("skills").skill["skill_1"]
-	$skills/skill_1/Sprite.set_texture(skill_1["sprite"])
-	$skills/skill_1/name.set_text(skill_1["nome"])
-	$skills/skill_1/dano.set_text(skill_1["dano"])
-	$skills/skill_1/nivel.set_text(skill_1["level"])
+	up_skill(1)
 	pass
 
 func add_skill_2():
-	var skill_2 = player.get_node("skills").skill["skill_1"]
-	$skills/skill_2/Sprite.set_texture(skill_2["sprite"])
-	$skills/skill_2/name.set_text(skill_2["nome"])
-	$skills/skill_2/dano.set_text(skill_2["dano"])
-	$skills/skill_2/nivel.set_text(skill_2["level"])
+	up_skill(2)
 	pass 
 
 func add_skill_3():
-	var skill_3 = player.get_node("skills").skill["skill_1"]
-	$skills/skill_3/Sprite.set_texture(skill_3["sprite"])
-	$skills/skill_3/name.set_text(skill_3["nome"])
-	$skills/skill_3/dano.set_text(skill_3["dano"])
-	$skills/skill_3/nivel.set_text(skill_3["level"])
+	up_skill(3)
 	pass 
+	
+func up_skills():
+	var num = self.skills_learned
+	#print(skills_learned)
+	var cont = 0
+	self.player_skill_dict = player.get_node("skills").skill
+	for x in num:
+		var skill = num[cont]
+		var sprite = load(skill["sprite"])
+		get_node("skills/skill_"+str(cont+1)+"/tex").set_texture(sprite)
+		get_node("skills/skill_"+str(cont+1)+"/name").set_text(skill["nome"])
+		get_node("skills/skill_"+str(cont+1)+"/dano").set_text("Dano: "+str(skill["dano"]))
+		get_node("skills/skill_"+str(cont+1)+"/nivel").set_text("Level: "+str(skill["level"]))
+		pass
+	pass
+	
+
+func _on_PopupDialog_about_to_show():
+	pass 
+
+
+func _on_PopupDialog_popup_hide():
+	pass # Replace with function body.

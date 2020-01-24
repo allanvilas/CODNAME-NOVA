@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://UI/ui.gd" type="Script" id=1]
 [ext_resource path="res://menu/skill_button/normal.png" type="Texture" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_36.png" type="Texture" id=40]
 [ext_resource path="res://UI/test.gd" type="Script" id=41]
 [ext_resource path="res://UI/menu_novo2.0/menu_novo_31.png" type="Texture" id=42]
+[ext_resource path="res://popup.tres" type="Theme" id=43]
 
 [sub_resource type="DynamicFont" id=1]
 use_mipmaps = true
@@ -66,9 +67,10 @@ __meta__ = {
 }
 
 [node name="skills" type="Control" parent="."]
-margin_top = 127.0
-margin_right = 207.0
-margin_bottom = 149.0
+margin_left = 0.128342
+margin_top = 126.872
+margin_right = 207.128
+margin_bottom = 148.872
 
 [node name="skill_1" type="TextureButton" parent="skills"]
 anchor_top = 0.5
@@ -294,7 +296,6 @@ texture_hover = ExtResource( 21 )
 
 [node name="base" type="NinePatchRect" parent="status"]
 editor/display_folded = true
-visible = false
 margin_left = 83.0
 margin_top = 4.0
 margin_right = 179.0
@@ -693,6 +694,7 @@ text = "0"
 align = 1
 
 [node name="status" type="NinePatchRect" parent="status"]
+visible = false
 margin_left = 83.0
 margin_top = 4.0
 margin_right = 179.0
@@ -721,7 +723,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="status/status/base"]
+[node name="tex" type="Sprite" parent="status/status/base"]
 position = Vector2( 28.6472, 26.1629 )
 scale = Vector2( 1.67103, 1.49997 )
 texture = ExtResource( 38 )
@@ -840,6 +842,7 @@ texture_normal = ExtResource( 30 )
 texture_pressed = ExtResource( 31 )
 
 [node name="skills" type="NinePatchRect" parent="status"]
+visible = false
 margin_left = 83.0
 margin_top = 4.0
 margin_right = 179.0
@@ -926,7 +929,7 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Sprite" type="Sprite" parent="status/skills/skill_1"]
+[node name="tex" type="Sprite" parent="status/skills/skill_1"]
 position = Vector2( 42.6353, 9.5562 )
 scale = Vector2( 0.4, 0.4 )
 
@@ -982,7 +985,7 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Sprite" type="Sprite" parent="status/skills/skill_2"]
+[node name="tex" type="Sprite" parent="status/skills/skill_2"]
 position = Vector2( 42.6353, 9.5562 )
 scale = Vector2( 0.4, 0.4 )
 
@@ -1038,7 +1041,7 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Sprite" type="Sprite" parent="status/skills/skill_3"]
+[node name="tex" type="Sprite" parent="status/skills/skill_3"]
 position = Vector2( 42.6353, 9.5562 )
 scale = Vector2( 0.4, 0.4 )
 
@@ -1213,6 +1216,26 @@ margin_right = 194.425
 margin_bottom = 17.811
 texture_normal = ExtResource( 30 )
 texture_pressed = ExtResource( 31 )
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+modulate = Color( 1, 0.505882, 0.266667, 1 )
+margin_left = 75.6842
+margin_top = 125.053
+margin_right = 182.684
+margin_bottom = 149.053
+theme = ExtResource( 43 )
+
+[node name="TXT" type="Label" parent="PopupDialog"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 9.0
+margin_top = -5.0
+margin_right = 204.0
+margin_bottom = 26.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 25 )
+autowrap = true
 [connection signal="toggled" from="skills/skill_1" to="." method="skill_1"]
 [connection signal="toggled" from="skills/skill_2" to="." method="skill_2"]
 [connection signal="toggled" from="skills/skill_3" to="." method="skill_3"]
@@ -1237,3 +1260,5 @@ texture_pressed = ExtResource( 31 )
 [connection signal="text_entered" from="teste_BD/valor" to="teste_BD" method="_on_valor_text_entered"]
 [connection signal="text_entered" from="teste_BD/inserir" to="teste_BD" method="_on_inserir_text_entered"]
 [connection signal="text_entered" from="teste_BD/consultar" to="teste_BD" method="_on_consultar_text_entered"]
+[connection signal="about_to_show" from="PopupDialog" to="status" method="_on_PopupDialog_about_to_show"]
+[connection signal="popup_hide" from="PopupDialog" to="status" method="_on_PopupDialog_popup_hide"]

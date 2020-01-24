@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var speel = preload("res://cenas/speel.tscn").instance()
+onready var speel = preload("res://cenas/speel.tscn")
 
 onready var cena = get_parent()
 
@@ -27,8 +27,8 @@ var mana_max = 50
 var xp = 0
 var xp_to_up = 100
 var nivel = 1
-var pontos = 0
-var pontos_skill = 1
+var pontos = 5
+var pontos_skill = 100
 #skillset
 #1 frost
 #2 fire
@@ -48,6 +48,9 @@ var can_attack = true
 var cell_vs_magnitude = []
 
 func _ready():
+	#player [0]
+	var cast = get_tree().get_nodes_in_group("cast")
+	
 	var ui = get_parent().get_parent().get_parent().get_node("/root/ui")
 	ui.get_node("status").player = self
 	ui.player = self
@@ -123,17 +126,18 @@ func _physics_process(delta):
 			move = Vector2(0,0)
 			anim.set_animation("idle")	
 			
-		if cast and can_attack == true:
+		if cast and can_attack == true and skill_set != null:
 			#print(skill_set)
-			if mana >= speel.skil_set["dano"] and skill_set != null:
+			if mana >= get_node("skills").skill[skill_set]["custo"] and skill_set != null:
 				casting = true
 				anim.set_animation("cast")
 				anim.play()
 				move = Vector2(0,0)
 				var spel = load("res://cenas/speel.tscn").instance()
-				spel.skil_set[skill_set]
+				spel.player_set_skill = skill_set
+				spel.skill = get_node("skills")
 				cast_speel(spel)
-				mana -= speel.skil_set.dano
+				mana -= spel.skil_set["custo"]
 				if mana <= mana_max:
 					$mana_recover.start()
 			else:
@@ -142,9 +146,9 @@ func _physics_process(delta):
 	move_and_collide(move * velocidade)	
 	pass
 
-func cast_speel(speel):
-	get_parent().add_child(speel)
-	speel.set_position(get_global_mouse_position())
+func cast_speel(spel):
+	get_parent().add_child(spel)
+	spel.set_position(get_global_mouse_position())
 	pass
 
 #func _on_mage_animation_finished():

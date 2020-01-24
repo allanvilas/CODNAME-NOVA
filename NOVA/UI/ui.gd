@@ -16,6 +16,7 @@ func _ready():
 	pass
 	
 func status_update():
+	$status.up_skills()
 	$status.atualizar_valores()
 	
 	vida.set_max(player.vida_max)
@@ -34,14 +35,17 @@ func status_update():
 	if Input.is_action_just_pressed("1"):
 		print("um")
 		player.skill_set = "skill_1"
+		btn_status(true,false,false)
 		pass
 	elif Input.is_action_just_pressed("2"):
 		print("dois")
 		player.skill_set = "skill_2"
+		btn_status(false,true,false)
 		pass
 	elif Input.is_action_just_pressed("3"):
 		print("três")
 		player.skill_set = "skill_3"
+		btn_status(false,false,true)
 		pass
 	# menu status
 	if Input.is_action_just_pressed("status"):

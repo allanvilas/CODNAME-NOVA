@@ -40,6 +40,7 @@ height = 10.9626
 
 [node name="player" type="KinematicBody2D" groups=[
 "root",
+"cast",
 ]]
 z_as_relative = false
 collision_layer = 17
@@ -50,7 +51,6 @@ velocidade = 1.0
 [node name="mage" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "cast"
-frame = 5
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

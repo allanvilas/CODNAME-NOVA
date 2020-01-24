@@ -4,18 +4,26 @@ onready var light = $key/Light2D
 onready var sprite = $key
 onready var anim = $anim
 
-export var light_colors = PoolColorArray([Color(91.0,55.0,13.0,1.0),
-					Color(90.0,90.0,100.0,1.0),
-					Color(220.0,185.0,90.0,1.0),
-					Color(90.0,220.0,200.0,1.0)])
+export var light_colors = PoolColorArray([
+	Color(91.0,55.0,13.0,1.0),
+	Color(90.0,90.0,100.0,1.0),
+	Color(220.0,185.0,90.0,1.0),
+	Color(90.0,220.0,200.0,1.0)
+	])
 					
-var keys_sprites = {brass="res://assets/keys/key_brass.png",
-					iron="res://assets/keys/key_iron.png",
-					gold="res://assets/keys/key_gold.png",
-					diamond="res://assets/keys/key_diamond.png",}
+var keys_sprites = {
+	brass="res://assets/keys/key_brass.png",
+	iron="res://assets/keys/key_iron.png",
+	gold="res://assets/keys/key_gold.png",
+	diamond="res://assets/keys/key_diamond.png",}
+	
 var texture
 
-var key_names = ["brass","iron","gold","diamond"]
+var key_names = [
+	"brass",
+	"iron",
+	"gold",
+	"diamond"]
 
 enum keys {brass,iron,gold,diamond}
 
