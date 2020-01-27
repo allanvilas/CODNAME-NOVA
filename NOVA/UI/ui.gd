@@ -37,7 +37,7 @@ func status_update():
 		if player.get_node("skills").skill["skill_1"]["learned"] == true:
 			player.skill_set = "skill_1"
 			btn_status(false,true,false)
-			get_node("skills/skill_2").set_disabled(false)
+			get_node("skills/skill_1").set_disabled(false)
 		else:
 			get_node("skills/skill_1").set_disabled(true)
 			pass
@@ -55,9 +55,9 @@ func status_update():
 	elif Input.is_action_just_pressed("3"):
 		print("três")
 		if player.get_node("skills").skill["skill_3"]["learned"] == true:
-			player.skill_set = "skill_2"
+			player.skill_set = "skill_3"
 			btn_status(false,false,true)
-			get_node("skills/skill_2").set_disabled(false)
+			get_node("skills/skill_3").set_disabled(false)
 		else:
 			get_node("skills/skill_3").set_disabled(true)
 			pass

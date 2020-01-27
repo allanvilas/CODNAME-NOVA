@@ -28,7 +28,7 @@ var xp = 0
 var xp_to_up = 100
 var nivel = 1
 var pontos = 5
-var pontos_skill = 100
+var pontos_skill = 1
 #skillset
 #1 frost
 #2 fire

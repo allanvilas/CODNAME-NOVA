@@ -78,20 +78,24 @@ anchor_bottom = 0.5
 margin_top = -10.0
 margin_right = 20.0
 margin_bottom = 10.0
+disabled = true
 toggle_mode = true
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_disabled = ExtResource( 4 )
 expand = true
 
-[node name="skill_1" type="Sprite" parent="skills/skill_1"]
+[node name="skill_tex" type="Sprite" parent="skills/skill_1"]
 position = Vector2( 10, 10 )
+scale = Vector2( 0.8, 0.8 )
 
-[node name="cost" type="Label" parent="skills/skill_1/skill_1"]
-margin_top = 1.0
-margin_right = 15.0
-margin_bottom = 17.0
-rect_scale = Vector2( 0.5, 0.5 )
+[node name="cost" type="Label" parent="skills/skill_1/skill_tex"]
+visible = false
+margin_left = -1.875
+margin_top = 2.5625
+margin_right = 13.125
+margin_bottom = 18.5625
+rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
@@ -103,21 +107,24 @@ margin_left = 20.0
 margin_top = -10.0
 margin_right = 40.0
 margin_bottom = 10.0
+disabled = true
 toggle_mode = true
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_disabled = ExtResource( 4 )
 expand = true
 
-[node name="skill_1" type="Sprite" parent="skills/skill_2"]
+[node name="skill_tex" type="Sprite" parent="skills/skill_2"]
 position = Vector2( 10, 10 )
+scale = Vector2( 0.8, 0.8 )
 
-[node name="cost" type="Label" parent="skills/skill_2/skill_1"]
+[node name="cost" type="Label" parent="skills/skill_2/skill_tex"]
 visible = false
-margin_top = 1.0
-margin_right = 15.0
-margin_bottom = 17.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -1.875
+margin_top = 2.5625
+margin_right = 13.125
+margin_bottom = 18.5625
+rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
@@ -129,21 +136,24 @@ margin_left = 40.0
 margin_top = -10.0
 margin_right = 60.0
 margin_bottom = 10.0
+disabled = true
 toggle_mode = true
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 texture_disabled = ExtResource( 4 )
 expand = true
 
-[node name="skill_1" type="Sprite" parent="skills/skill_3"]
+[node name="skill_tex" type="Sprite" parent="skills/skill_3"]
 position = Vector2( 10, 10 )
+scale = Vector2( 0.8, 0.8 )
 
-[node name="cost" type="Label" parent="skills/skill_3/skill_1"]
+[node name="cost" type="Label" parent="skills/skill_3/skill_tex"]
 visible = false
-margin_top = 1.0
-margin_right = 15.0
-margin_bottom = 17.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -1.875
+margin_top = 2.5625
+margin_right = 13.125
+margin_bottom = 18.5625
+rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"

@@ -11,14 +11,14 @@ var cell_position = []
 var cell_magnitude = [] 
 var cell_weight = []
 
-export var vida = 50
+export var vida = 30
 var mana = 50
 export var xp = 0
 export var nivel = 1
 
 #danos
-export var dano_minimo = 12.0
-export var dano_maximo = 25.0
+export var dano_minimo = 8.0
+export var dano_maximo = 14.0
 
 onready var ray_up = $up
 onready var ray_down = $down

@@ -5,6 +5,7 @@ onready var player
 func _ready():
 	pass
 
+
 func atualizar_valores():
 	$base/magica/value.set_text(str(player.magica))
 	$base/sab/value.set_text(str(player.sabedoria))
@@ -23,8 +24,10 @@ func _on_mag2_pressed():
 	if player.pontos > 0:
 		player.pontos -= 1
 		player.magica += 1
-		player.get_node("skills")
-		
+		player.mana = round(player.mana * 1.1)
+		player.get_node("skills").skill["skill_1"]["dano_base"] = round(player.get_node("skills").skill["skill_1"]["dano_base"] *1.1)
+		player.get_node("skills").skill["skill_2"]["dano_base"] = round(player.get_node("skills").skill["skill_2"]["dano_base"] *1.1)
+		player.get_node("skills").skill["skill_3"]["dano_base"] = round(player.get_node("skills").skill["skill_3"]["dano_base"] *1.1)
 	else:
 		print("pontos insuficientes")
 	pass 
@@ -80,6 +83,8 @@ var player_skill_dict
 func up_skill(index):
 	var psd = player_skill_dict["skill_"+str(index)]
 	
+	print("teste")
+	
 	
 	if player.pontos_skill >=1:
 		if player.nivel <= psd["min_level"]:
@@ -88,6 +93,7 @@ func up_skill(index):
 			print("Você não tem level suficiente, volte quando alcançar o level "+str(psd["min_level"]))
 		else:
 			psd["level"] += 1
+			#upar skill sem gastar pontos, teste
 			#player.pontos_skill -=1
 			psd["learned"] = true
 			pop.popup()
@@ -131,6 +137,9 @@ func up_skills():
 		var skill = num[cont]
 		var sprite = load(skill["sprite"])
 		get_node("skills/skill_"+str(cont+1)+"/tex").set_texture(sprite)
+		get_parent().get_node("skills/skill_"+str(cont+1)+"/skill_tex").set_texture(sprite)
+		get_parent().get_node("skills/skill_"+str(cont+1)+"/skill_tex/cost").set_visible(true)
+		get_parent().get_node("skills/skill_"+str(cont+1)+"/skill_tex/cost").set_text(str(skill["custo"]))
 		get_node("skills/skill_"+str(cont+1)+"/name").set_text(skill["nome"])
 		get_node("skills/skill_"+str(cont+1)+"/dano").set_text("Dano: "+str(skill["dano"]))
 		get_node("skills/skill_"+str(cont+1)+"/nivel").set_text("Level: "+str(skill["level"]))
