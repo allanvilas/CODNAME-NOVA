@@ -25,8 +25,8 @@ var vida_max = 100
 var mana = 50
 var mana_max = 50
 var xp = 0
-var xp_to_up = 100
-var nivel = 1
+var xp_to_up = 50
+var nivel = 10
 var pontos = 5
 var pontos_skill = 1
 #skillset
@@ -175,6 +175,7 @@ func _on_mana_recover_timeout():
 	pass 
 func _on_cell_vs_magnitude_timeout():
 	calculate_points()
+	#xp+=15
 	pass 
 
 func obj_entered(body_id, body, body_shape, area_shape):

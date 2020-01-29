@@ -57,13 +57,13 @@ func novo_jogo():
 	camera_control()
 	player._name = new_name_player
 	get_parent().get_node("highscore").create_higscore()
-	player.nivel = 1
+	player.nivel = 6
 	player.xp = 0
 	player.magica = 0
 	player.sabedoria = 0
 	player.inteligencia = 0
 	player.ethrium = 0
-	player.pontos = 5
+	player.pontos = 50
 	get_node("player").set_position(mapatual[mapa_index].start)
 	get_parent().get_node("Spawn").set_wait_time()
 	pass

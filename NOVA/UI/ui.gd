@@ -16,7 +16,6 @@ func _ready():
 	pass
 	
 func status_update():
-	$status.up_skills()
 	$status.atualizar_valores()
 	
 	vida.set_max(player.vida_max)
@@ -29,7 +28,7 @@ func status_update():
 	
 	nivel.set_text("Lv." + str(player.nivel))
 	qt_mana.set_text(str(player.mana))
-	xp_pontos.set_text(str(player.xp))
+	xp_pontos.set_text("xp: "+str(player.xp)+"/"+str(player.xp_to_up))
 	pontos.set_text(str(player.pontos))
 	
 	if Input.is_action_just_pressed("1"):
@@ -90,11 +89,16 @@ func status_update():
 	
 func level_up():
 	if player.xp >= player.xp_to_up:
+		var xp = player.xp_to_up
+		var nivel = player.nivel
+		player.vida_max += 5
+		player.vida += 5
+		player.mana_max += 5
 		player.xp = player.xp - player.xp_to_up
+		player.xp_to_up = round(int(xp+(xp/6)))
 		player.nivel += 1
 		player.pontos += 5
 		player.pontos_skill += 1
-		player.xp_to_up += randi()% 50
 		print("XP atual" + str(player.xp))
 		print("xp para upar" + str(player.xp_to_up))
 	pass

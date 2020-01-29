@@ -76,7 +76,7 @@ tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 format = 1
-tile_data = PoolIntArray( -458775, 536870912, 0, -131077, 0, 0, -131074, 0, 0, -196606, 0, 0, 4, 0, 0, 327657, 536870912, 0, 393219, 0, 0, 524289, 0, 0 )
+tile_data = PoolIntArray( -786451, 0, 0, -458775, 536870912, 0, -131077, 0, 0, -131074, 0, 0, -196606, 0, 0, 4, 0, 0, 327657, 536870912, 0, 393219, 0, 0, 524289, 0, 0 )
 script = ExtResource( 6 )
 
 [node name="envirorment" type="Node2D" parent="."]
@@ -84,47 +84,63 @@ position = Vector2( -2.80849, 382.123 )
 
 [node name="candle" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -77.3937, -38.2796 )
+frame = 3
+
+[node name="candle12" parent="envirorment" instance=ExtResource( 7 )]
+position = Vector2( -524.373, -806.128 )
+frame = 3
+
+[node name="candle13" parent="envirorment" instance=ExtResource( 7 )]
+position = Vector2( -428.979, -806.128 )
+frame = 3
+
+[node name="candle14" parent="envirorment" instance=ExtResource( 7 )]
+position = Vector2( -300.908, -806.128 )
 frame = 2
+
+[node name="candle15" parent="envirorment" instance=ExtResource( 7 )]
+position = Vector2( -782.038, -645.939 )
+frame = 2
+
+[node name="candle16" parent="envirorment" instance=ExtResource( 7 )]
+position = Vector2( -587.522, -645.748 )
+frame = 1
 
 [node name="candle11" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -12.5503, -38.2796 )
-frame = 1
+frame = 2
 
 [node name="candle9" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -172.397, -486.088 )
-frame = 2
+frame = 3
 
 [node name="candle10" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -206.955, -677.943 )
-frame = 1
+frame = 2
 
 [node name="candle2" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -11.9287, -134.223 )
-frame = 2
+frame = 3
 
 [node name="candle3" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( 83.4657, -133.696 )
-frame = 3
 
 [node name="candle4" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( 208.638, -230.145 )
-frame = 3
 
 [node name="candle5" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -13.5098, -486.287 )
-frame = 3
 
 [node name="candle6" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( -13.7734, -614.094 )
-frame = 3
 
 [node name="candle7" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( 116.142, -613.83 )
-frame = 2
+frame = 3
 
 [node name="candle8" parent="envirorment" instance=ExtResource( 7 )]
 position = Vector2( 50.5256, -677.866 )
-frame = 2
+frame = 3
 
 [node name="monster_wall" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( 51.205, -141.904 )
@@ -147,8 +163,12 @@ position = Vector2( 114.738, -205.866 )
 frame = 1
 
 [node name="monster_wall3" parent="envirorment" instance=ExtResource( 8 )]
-position = Vector2( 146.852, -398.043 )
+position = Vector2( 146.852, -398.384 )
 frame = 1
+
+[node name="monster_wall8" parent="envirorment" instance=ExtResource( 8 )]
+position = Vector2( -589.528, -814.865 )
+frame = 0
 
 [node name="monster_wall4" parent="envirorment" instance=ExtResource( 8 )]
 position = Vector2( 82.5537, -493.944 )
@@ -209,7 +229,7 @@ position = Vector2( -45.2339, -22.593 )
 position = Vector2( -2.80849, 382.123 )
 
 [node name="00012" parent="enemies" instance=ExtResource( 12 )]
-position = Vector2( -808.208, -425.293 )
+position = Vector2( -862.828, -367.747 )
 
 [node name="00013" parent="enemies" instance=ExtResource( 13 )]
 position = Vector2( 165.244, -208.589 )

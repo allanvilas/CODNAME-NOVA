@@ -21,10 +21,11 @@ func _on_esc_pressed():
 	pass 
 
 func _on_mag2_pressed():
+	up_skills()
 	if player.pontos > 0:
 		player.pontos -= 1
 		player.magica += 1
-		player.mana = round(player.mana * 1.1)
+		player.mana = round(player.mana_max * 1.1)
 		player.get_node("skills").skill["skill_1"]["dano_base"] = round(player.get_node("skills").skill["skill_1"]["dano_base"] *1.1)
 		player.get_node("skills").skill["skill_2"]["dano_base"] = round(player.get_node("skills").skill["skill_2"]["dano_base"] *1.1)
 		player.get_node("skills").skill["skill_3"]["dano_base"] = round(player.get_node("skills").skill["skill_3"]["dano_base"] *1.1)
@@ -33,6 +34,7 @@ func _on_mag2_pressed():
 	pass 
 
 func _on_sabe_pressed():
+	up_skills()
 	if player.pontos > 0:
 		player.pontos -= 1
 		player.sabedoria += 1
@@ -41,6 +43,7 @@ func _on_sabe_pressed():
 	pass # replace with function body
 
 func _on_inte_pressed():
+	up_skills()
 	if player.pontos > 0:
 		player.pontos -= 1
 		player.inteligencia += 1
@@ -49,6 +52,7 @@ func _on_inte_pressed():
 	pass # replace with function body
 
 func _on_ethri_pressed():
+	up_skills()
 	if player.pontos > 0:
 		player.pontos -= 1
 		player.ethrium += 1
@@ -81,8 +85,8 @@ func _on_skills_pressed():
 #botão add da skill frost
 var player_skill_dict
 func up_skill(index):
+	self.player_skill_dict = player.get_node("skills").skill
 	var psd = player_skill_dict["skill_"+str(index)]
-	
 	print("teste")
 	
 	
@@ -100,8 +104,9 @@ func up_skill(index):
 			pop.get_node("TXT").set_text("Você evoluiu a skill "+str(psd["nome"]))
 			psd["mod_dmg"] += psd["dmg_index"]
 			psd["mod_cost"] += psd["cost_index"]
-			psd["dano"] = psd["dano_base"] +( psd["dano_base"] * psd["mod_dmg"] )
-			psd["custo"] = psd["custo_base"] +( psd["custo_base"] * psd["mod_cost"] )
+			att_skill_dmg(psd)
+			#psd["dano"] = psd["dano_base"] +( psd["dano_base"] * psd["mod_dmg"] )
+			#psd["custo"] = psd["custo_base"] +( psd["custo_base"] * psd["mod_cost"] )
 			print(psd)
 			pass
 	else:
@@ -112,7 +117,12 @@ func up_skill(index):
 	if psd["learned"]:
 		if not skills_learned.has(psd):
 			skills_learned.append(psd)
-		pass	
+		pass
+	up_skills()	
+	pass
+func att_skill_dmg(psd):
+	psd["dano"] = psd["dano_base"] +( psd["dano_base"] * psd["mod_dmg"] )
+	psd["custo"] = psd["custo_base"] +( psd["custo_base"] * psd["mod_cost"] )
 	pass
 var skills_learned = []
 
@@ -129,20 +139,24 @@ func add_skill_3():
 	pass 
 	
 func up_skills():
-	var num = self.skills_learned
-	#print(skills_learned)
-	var cont = 0
 	self.player_skill_dict = player.get_node("skills").skill
-	for x in num:
-		var skill = num[cont]
+	var num = self.skills_learned
+	print(skills_learned)
+	var cont = 0
+	var index = num.size()
+	for i in num.size():
+		print(i)
+		cont = i+1
+		var skill = num[i]
+		att_skill_dmg(num[i])
 		var sprite = load(skill["sprite"])
-		get_node("skills/skill_"+str(cont+1)+"/tex").set_texture(sprite)
-		get_parent().get_node("skills/skill_"+str(cont+1)+"/skill_tex").set_texture(sprite)
-		get_parent().get_node("skills/skill_"+str(cont+1)+"/skill_tex/cost").set_visible(true)
-		get_parent().get_node("skills/skill_"+str(cont+1)+"/skill_tex/cost").set_text(str(skill["custo"]))
-		get_node("skills/skill_"+str(cont+1)+"/name").set_text(skill["nome"])
-		get_node("skills/skill_"+str(cont+1)+"/dano").set_text("Dano: "+str(skill["dano"]))
-		get_node("skills/skill_"+str(cont+1)+"/nivel").set_text("Level: "+str(skill["level"]))
+		get_node("skills/skill_"+str(cont)+"/tex").set_texture(sprite)
+		get_parent().get_node("skills/skill_"+str(cont)+"/skill_tex").set_texture(sprite)
+		get_parent().get_node("skills/skill_"+str(cont)+"/skill_tex/cost").set_visible(true)
+		get_parent().get_node("skills/skill_"+str(cont)+"/skill_tex/cost").set_text(str(skill["custo"]))
+		get_node("skills/skill_"+str(cont)+"/name").set_text(skill["nome"])
+		get_node("skills/skill_"+str(cont)+"/dano").set_text("Dano: "+str(skill["dano"]))
+		get_node("skills/skill_"+str(cont)+"/nivel").set_text("Level: "+str(skill["level"]))
 		pass
 	pass
 	
