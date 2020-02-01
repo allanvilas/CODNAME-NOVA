@@ -94,6 +94,7 @@ func level_up():
 		player.vida_max += 5
 		player.vida += 5
 		player.mana_max += 5
+		#xp do player agora está funcionanado
 		player.xp = player.xp - player.xp_to_up
 		player.xp_to_up = round(int(xp+(xp/6)))
 		player.nivel += 1
